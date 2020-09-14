@@ -4,7 +4,7 @@
 
 ##### 1. Протипизируйте список элементов
 ```typescript
-export const List: IList[] = [
+export const List: ICountries[] = [
   {
     title: 'Страны',
     items: [
@@ -37,7 +37,7 @@ export const List: IList[] = [
 <p>
 
 ```typescript
-type IList {
+interface ICountries {
   title?: string,
   items?: IList[]
 }
