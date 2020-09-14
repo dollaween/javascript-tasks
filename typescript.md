@@ -4,7 +4,7 @@
 
 ##### 1. Протипизируйте список элементов
 ```typescript
-export const List: ICountries[] = [
+export const Countries: ICountries[] = [
   {
     title: 'Страны',
     items: [
