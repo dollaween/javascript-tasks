@@ -7,5 +7,7 @@
 
 </div>
 
+---
+
 ### Категории задач:
 * [Typescript](./typescript.md)
