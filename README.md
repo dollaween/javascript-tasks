@@ -10,4 +10,5 @@
 ---
 
 ### Категории задач:
+* [Браузер](./browser.md)
 * [Typescript](./typescript.md)
