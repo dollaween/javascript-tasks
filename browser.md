@@ -16,7 +16,7 @@ localStorage.setItem('password', 'Bruce Wayne')
 
 /** ВАШ КОД */
 ```
-`console:`
+**Результат**
 ```bash
 age: 60
 login: Alfred
