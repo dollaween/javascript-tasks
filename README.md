@@ -10,5 +10,6 @@
 ---
 
 ### Категории задач:
+* [String](./string.md)
 * [Браузер](./browser.md)
 * [Typescript](./typescript.md)
