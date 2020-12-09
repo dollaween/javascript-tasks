@@ -1,4 +1,4 @@
-\<div align="center">
+<div align="center">
 
 <h1>Задачи по Javascript: String</h1>
 

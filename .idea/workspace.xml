@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2640048c-fd96-40ca-9250-5f95922f9a3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/typescript.md" beforeDir="false" afterPath="$PROJECT_DIR$/typescript.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string.md" beforeDir="false" afterPath="$PROJECT_DIR$/string.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,5 +70,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
