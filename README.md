@@ -11,5 +11,6 @@
 
 ### Категории задач:
 * [String](./string.md)
+* [Регулярные выражения](./regexp.md)
 * [Браузер](./browser.md)
 * [Typescript](./typescript.md)
