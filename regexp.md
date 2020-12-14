@@ -93,5 +93,26 @@ function cleanString(str) {
 
 ---
 
+##### 6. Уберите из строки все теги
+
+```javascript
+cleanString('<prod><name>drill</name><prx>99</prx><qty>5</qty></prod>')
+// => drill 99 5
+```
+
+<details><summary><b>Ответ</b></summary>
+<p>
+
+```javascript
+function cleanString(str) {
+  return str.replace(/<.*?>/g, ' ').trim()
+}
+```
+
+</p>
+</details>
+
+---
+
 Ссылки:
 * [Регулярные выражения](https://learn.javascript.ru/regular-expressions)
