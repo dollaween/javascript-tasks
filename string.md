@@ -164,3 +164,66 @@ function validParentheses(parens){
 
 ---
 
+##### 5. Является ли строка A анаграммой строки B?
+
+```javascript
+anagram('friend', 'finder')                       // => true
+anagram('hello', 'bye')                           // => false
+anagram('Eleven, plus two', 'Twelve plus one!')   // => true
+anagram('Аз есмь строка, живу я, мерой остр', 'За семь морей ростка я вижу рост')   // => true
+```
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```javascript
+function cleanString(str) {
+  return str
+    .replace(/[^a-zA-ZА-Яа-я0-9]/g, '')
+    .toLowerCase()
+    .split('')
+    .sort()
+    .join('');
+}
+
+function anagram(strA, strB) {
+  return cleanString(strA) === cleanString(strB);
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+function buildCharObj(str) {
+  const charObj = {};
+  str = str.replace(/[^\wа-яА-Я+]/g, '').toLowerCase();
+  for (let char of str) {
+    charObj[char] = charObj[char] + 1 || 1;
+  }
+  return charObj;
+}
+
+function anagram(strA, strB) {
+  const aCharObj = buildCharObj(strA);
+  const bCharObj = buildCharObj(strB);
+
+  if (Object.keys(aCharObj).length !== Object.keys(bCharObj).length) {
+    return false;
+  }
+
+  for (let char in aCharObj) {
+    if (aCharObj[char] !== bCharObj[char]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+
+</p>
+</details>
