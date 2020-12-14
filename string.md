@@ -50,7 +50,6 @@ function rearrangeWords(str) {
 ---
 
 ##### 2. Валидные скобки
-*Источник: Codewars*
 Напишите функцию, которая принимает скобки и определяет валидность порядка скобок.
 
 ```javascript
@@ -96,5 +95,7 @@ function validParentheses(parens){
 
 </p>
 </details>
+
+*Источник: Codewars*
 
 ---
