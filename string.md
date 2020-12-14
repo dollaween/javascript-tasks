@@ -179,7 +179,7 @@ anagram('Аз есмь строка, живу я, мерой остр', 'За с
 ```javascript
 function cleanString(str) {
   return str
-    .replace(/[^a-zA-ZА-Яа-я0-9]/g, '')
+    .replace(/[^\wа-яА-Я0-9]/g, '')
     .toLowerCase()
     .split('')
     .sort()
