@@ -110,10 +110,6 @@ function wrongLatin(str) {
 </p>
 </details>
 
-function pigIt(str){
-  return str.split(' ').map(item => /[a-zA-Z]/.test(item[0]) ? item.slice(1) + item[0] + 'ay' : item).join(' ');
-}
-
 ---
 
 ##### 4. Валидные скобки
