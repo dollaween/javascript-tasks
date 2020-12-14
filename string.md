@@ -49,7 +49,74 @@ function rearrangeWords(str) {
 
 ---
 
-##### 2. Валидные скобки
+##### 2. Замените все слова другим словом
+Замените все слова в предложении словом 'wrond'. Знаки препинания оставьте без изменений.
+
+```javascript
+replaceWords('Hello world, чудесный новый мир!')
+// => wrong wrong, wrong wrong wrong!
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function replaceWords(str) {
+  // Достаем слова целиком
+  const regExp = /(\w+|[А-Яа-я]+)/g
+  const res = str.replace(regExp, 'wrong')
+}
+```
+
+</p>
+</details>
+
+---
+
+
+##### 3. Неправильная латиница
+Передвиньте первую букву в конец слова и добавьте 'ay' после нее. Знаки препинания оставьте нетронутыми.
+
+```javascript
+wrongLatin('Wrong latin is cool')
+// => rongWay atinlay siay oolcay
+wrongLatin('Hello world !')
+// => elloHay orldway !
+```
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```javascript
+function wrongLatin(str){
+  return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+function wrongLatin(str) {
+  return str.replace(/\w+/g, (w) => {
+    return w.slice(1) + w[0] + 'ay';
+  });
+}
+```
+
+</p>
+</details>
+
+function pigIt(str){
+  return str.split(' ').map(item => /[a-zA-Z]/.test(item[0]) ? item.slice(1) + item[0] + 'ay' : item).join(' ');
+}
+
+---
+
+##### 4. Валидные скобки
 Напишите функцию, которая принимает скобки и определяет валидность порядка скобок.
 
 ```javascript
@@ -99,3 +166,4 @@ function validParentheses(parens){
 *Источник: Codewars*
 
 ---
+
