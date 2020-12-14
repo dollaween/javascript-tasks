@@ -80,6 +80,7 @@ function replaceWords(str) {
 ```javascript
 wrongLatin('Wrong latin is cool')
 // => rongWay atinlay siay oolcay
+
 wrongLatin('Hello world !')
 // => elloHay orldway !
 ```
