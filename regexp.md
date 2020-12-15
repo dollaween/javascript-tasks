@@ -10,7 +10,7 @@
 
 ##### 1. Выберите только буквы (включая русские)
 
-<details><summary><b>Ответ</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
@@ -24,7 +24,7 @@
 
 ##### 2. Выберите только цифры
 
-<details><summary><b>Ответ</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
@@ -38,7 +38,7 @@
 
 ##### 3. Выберите все, кроме букв (включая русские) и цифр
 
-<details><summary><b>Ответ</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
@@ -57,7 +57,7 @@ cleanString('Восхитительная весна$, а следом — ле�
 // => Восхитительная весна, а следом  лето. And we go again 123
 ```
 
-<details><summary><b>Ответ</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
@@ -71,7 +71,49 @@ function cleanString(str) {
 
 ---
 
-##### 5. Парсинг чисел
+##### 5. Напишите функцию, которая заменяет два и более пробелов подряд одним пробелом
+
+```javascript
+removeExtraSpaces('Matches between  one   and unlimited     times')
+// => Matches between one and unlimited times
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function removeExtraSpaces(str) {
+  return str.replace(/\s\s+/g, ' ');
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 6. Напишите функцию, которая заменяет два и более подряд идущих одинаковых символов одним символом
+
+```javascript
+removeExtraSymbols('Heeere we goo aaagain...')
+// => 'Here we go again.'
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function removeExtraSymbols(str) {
+  return str.replace(/(.)\1+/g, (_, sym) => sym)
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 7. Парсинг чисел
 Напишите функцию, принимающую строку и возвращающую массив чисел из этой строки. Отрицательные и дробные числа (через точку) должны быть в итоговом варианте.
 
 ```javascript
@@ -79,7 +121,7 @@ str('1.5 0, -12. NaN 123.4. 70-50')
 // => ["1.5", "0", "-12", "123.4", "70", "-50"]
 ```
 
-<details><summary><b>Ответ</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
@@ -93,14 +135,14 @@ function cleanString(str) {
 
 ---
 
-##### 6. Уберите из строки все теги
+##### 8. Уберите из строки все теги
 
 ```javascript
 cleanString('<prod><name>drill</name><prx>99</prx><qty>5</qty></prod>')
 // => drill 99 5
 ```
 
-<details><summary><b>Ответ</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
