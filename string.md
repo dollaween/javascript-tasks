@@ -569,3 +569,35 @@ function countDuplicates() {
 </details>
 
 ---
+
+##### 12. Найдите первый неповторяющийся символ в строке
+
+```javascript
+firstNonRepeatingCharacter('akwpaoonwpqkskmqy')
+// => n
+
+firstNonRepeatingCharacter('abracadabra')
+// => c
+
+firstNonRepeatingCharacter('aabbbccddddd')
+// => null
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function firstNonRepeatingCharacter(str) {
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]
+    if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
+      return char
+    }
+  }
+
+  return null
+}
+```
+
+</p>
+</details>
