@@ -395,3 +395,36 @@ function findVowels(str) {
 
 </p>
 </details>
+
+---
+
+##### 9. Сжатие строки
+
+```javascript
+stringCompression('AAABbbbBcCCC')
+// => 'A3Bb3BcC3'
+
+stringCompression('A: AAAAA; T: TTTTTTT')
+// => 'A: A5; T: T7'
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+С помощью регулярного выражения найдите в строке символы, повторяющиеся два или более раз. Воспользуйтесь методом `replace`, чтобы заменить найденные символы.
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function stringCompression() {
+  const regexp = /(.)\1+/g;
+  return str.replace(regexp, (letters, letter) => letter + letters.length);
+}
+```
+
+</p>
+</details>
