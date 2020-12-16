@@ -114,53 +114,39 @@ function wrongLatin(str) {
 ---
 
 ##### 4. Валидные скобки
-Напишите функцию, которая принимает скобки и определяет валидность порядка скобок.
+Напишите функцию, которая принимает скобки, и определяет валидность их порядка.
 
 ```javascript
-"()"              // =>  true
-")(()))"          // =>  false
-"("               // =>  false
-"(())((()())())"  // =>  true
+validParentheses('()')              // =>  true
+validParentheses(')(()))')          // =>  false
+validParentheses('(')               // =>  false
+validParentheses('(())((()())())')  // =>  true
 ```
 
-<details><summary><b>Решение 1</b></summary>
+<details><summary><b>Подсказка</b></summary>
+<p>
+Создайте счетчик от нуля. С помощью цикла пройдитесь по каждому символу строки и добавляйте +1 (для скобки '(') или -1 (для скобки ')'). Если счетчик хоть раз стал отрицательным — возвращайте `false`. Если после перебора всей строки значение не равно нулю — возвращайте `false`.
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
 function validParentheses(parens){
-  var n = 0;
-  for (var i = 0; i < parens.length; i++) {
-    if (parens[i] == '(') n++;
-    if (parens[i] == ')') n--;
+  let n = 0;
+
+  for (let i = 0; i < parens.length; i++) {
+    parens[i] === '(' ? n++ : n--;
     if (n < 0) return false;
   }
-  
-  return n == 0;
+
+  return n === 0;
 }
 ```
 
 </p>
 </details>
-
-<details><summary><b>Решение 2</b></summary>
-<p>
-
-```javascript
-function validParentheses(parens){
-  var indent = 0;
-  
-  for (var i = 0 ; i < parens.length && indent >= 0; i++) {
-    indent += (parens[i] == '(') ? 1 : -1;    
-  }
-  
-  return (indent == 0);
-}
-```
-
-</p>
-</details>
-
-*Источник: Codewars*
 
 ---
 
