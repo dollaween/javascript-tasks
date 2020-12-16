@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Задачи по Javascript: String</h1>
+<h1>Задачи по Javascript: Строки</h1>
 
 <a href="https://github.com/dollaween/javascript-tasks">На главную</a> | <a href="https://github.com/dollaween/javascript-questions">Вопросы</a> | <a href="https://github.com/dollaween/javascript-tests">Тесты</a>
 
@@ -23,8 +23,10 @@ rearrangeWords('Арнольд Шварценеггер')
 
 <details><summary><b>Подсказка</b></summary>
 <p>
+
 Используйте такие методы массива, как `split`, `join`, `reverse`. Либо воспользуйтесь регулряными выражениями и методом `replace`.
 </p>
+
 </details>
 
 <details><summary><b>Решение 1</b></summary>
@@ -53,7 +55,7 @@ function rearrangeWords(str) {
 
 ---
 
-##### 2. Замените все слова другим словом
+##### 2. Замените все слова в строке другим словом
 Замените все слова в предложении словом 'wrong'. Знаки препинания оставьте без изменений.
 
 ```javascript
@@ -173,6 +175,7 @@ function validParentheses(parens){
 ---
 
 ##### 5. Является ли строка A анаграммой строки B?
+*Анаграмма* — это слово или словосочетание, образованное путём перестановки букв, составляющих другое слово.
 
 ```javascript
 anagram('friend', 'finder')                       // => true
