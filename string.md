@@ -583,6 +583,14 @@ firstNonRepeatingCharacter('aabbbccddddd')
 // => null
 ```
 
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Попробуйте использовать метод `str.indexOf()`.
+
+</p>
+</details>
+
 <details><summary><b>Решение</b></summary>
 <p>
 
