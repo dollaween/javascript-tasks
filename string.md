@@ -688,3 +688,26 @@ function hideEmail(str) {
 
 </p>
 </details>
+
+---
+
+##### 15. Напишите функцию, которая меняет регистр букв на противоположный
+
+```javascript
+swapCase('aAbbbBBCCcd')
+// => 'AaBBBbbccCD'
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function swapCase(str) {
+  return str.replace(/([a-z]+)|([A-Z]+)/g, function(match, char) {
+    return char ? match.toUpperCase() : match.toLowerCase()
+  })
+}
+```
+
+</p>
+</details>
