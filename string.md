@@ -662,3 +662,29 @@ function permute() {
 
 </p>
 </details>
+
+---
+
+##### 14. Напишите функцию, которая прячет часть email адреса
+Отобразите только первые три символа логина email. Если количество символов в логине меньше четырех — отобразите только первый символ email.
+
+```javascript
+hideEmail('learner@gmail.com')
+// => 'lea...@gmail.com'
+
+hideEmail('teo@gmail.com')
+// => 't...@gmail.com'
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function hideEmail(str) {
+  const parts = str.split('@')
+  return parts[0].slice(0, parts[0].length < 4 ? 1 : 3) + '...@' + parts[1]
+}
+```
+
+</p>
+</details>

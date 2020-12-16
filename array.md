@@ -23,12 +23,41 @@ uniqueValues([1, 1, 2, 3, 4, 2, 3, 7, 5, 5, 7, 8])
 </p>
 </details>
 
-<details><summary><b>Решение 1</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
 function uniqueValues(arr) {
   return [...new Set(arr)]
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 2. Перемешайте элементы в массиве
+
+```javascript
+shuffle([1, 2, 3, 4, 5, 6, 7])
+// => [6, 4, 1, 7, 5, 2, 3]
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Попробуйте использовать метод `Array.sort()` и `Math.random()`.
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5)
 }
 ```
 
