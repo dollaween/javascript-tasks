@@ -50,7 +50,7 @@ function rearrangeWords(str) {
 ---
 
 ##### 2. Замените все слова другим словом
-Замените все слова в предложении словом 'wrond'. Знаки препинания оставьте без изменений.
+Замените все слова в предложении словом 'wrong'. Знаки препинания оставьте без изменений.
 
 ```javascript
 replaceWords('Hello world, чудесный новый мир!')
@@ -227,3 +227,51 @@ function anagram(strA, strB) {
 
 </p>
 </details>
+
+---
+
+##### 6. Проверьте строку на палиндром
+*Палиндром* — это слово, которое читается одинаково слева направо.
+
+```javascript
+palindrome('Anna')                  // true
+palindrome('Never, odd or even!')   // true
+palindrome('More work?')            // false
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>Удалите из строки все лишние символы, приведите слова к единому регистру. Затем сравните получившуюся строку с ней же, но в обратном порядке.</p>
+</details>
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```javascript
+function palindrome(str) {
+  str = str.replace(/[\W]/g, '').toLowerCase()
+  return str === str.split('').reverse().join('')
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+function palindrome(str) {
+  str = str.replace(/[\W]/g, '').toLowerCase()
+  const length = str.length
+  for (let i = 0; i <= length / 2; i++) {
+    if (str[i] !== str[length - 1 - i]) {
+      return false
+    }
+  }
+  return true
+}
+```
+
+</p>
+</details>
+
