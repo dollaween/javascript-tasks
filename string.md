@@ -123,8 +123,8 @@ function wrongLatin(str){
 ```javascript
 function wrongLatin(str) {
   return str.replace(/\w+/g, (w) => {
-    return w.slice(1) + w[0] + 'ay';
-  });
+    return w.slice(1) + w[0] + 'ay'
+  })
 }
 ```
 
@@ -156,14 +156,14 @@ validParentheses('(())((()())())')  // =>  true
 
 ```javascript
 function validParentheses(parens){
-  let n = 0;
+  let n = 0
 
   for (let i = 0; i < parens.length; i++) {
-    parens[i] === '(' ? n++ : n--;
-    if (n < 0) return false;
+    parens[i] === '(' ? n++ : n--
+    if (n < 0) return false
   }
 
-  return n === 0;
+  return n === 0
 }
 ```
 
@@ -197,11 +197,11 @@ function cleanString(str) {
     .toLowerCase()
     .split('')
     .sort()
-    .join('');
+    .join('')
 }
 
 function anagram(strA, strB) {
-  return cleanString(strA) === cleanString(strB);
+  return cleanString(strA) === cleanString(strB)
 }
 ```
 
@@ -213,29 +213,29 @@ function anagram(strA, strB) {
 
 ```javascript
 function buildCharObj(str) {
-  const charObj = {};
-  str = str.replace(/[^\wА-я+]/g, '').toLowerCase();
+  const charObj = {}
+  str = str.replace(/[^\wА-я+]/g, '').toLowerCase()
   for (let char of str) {
-    charObj[char] = charObj[char] + 1 || 1;
+    charObj[char] = charObj[char] + 1 || 1
   }
-  return charObj;
+  return charObj
 }
 
 function anagram(strA, strB) {
-  const aCharObj = buildCharObj(strA);
-  const bCharObj = buildCharObj(strB);
+  const aCharObj = buildCharObj(strA)
+  const bCharObj = buildCharObj(strB)
 
   if (Object.keys(aCharObj).length !== Object.keys(bCharObj).length) {
-    return false;
+    return false
   }
 
   for (let char in aCharObj) {
     if (aCharObj[char] !== bCharObj[char]) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }
 ```
 
@@ -315,13 +315,13 @@ fibonacci(9)    // 34
 
 ```javascript
 function fibonacci(num) {
-  const result = [0, 1];
+  const result = [0, 1]
 
   for (let i = 2; i <= num; i++) {
-    result.push(result[i - 1] + result[i - 2]);
+    result.push(result[i - 1] + result[i - 2])
   }
 
-  return result[num];
+  return result[num]
 }
 ```
 
@@ -347,7 +347,7 @@ function fibonacci(num) {
 
 ---
 
-8. Напишите функцию, которая будет выдавать количество гласных в строке
+##### 8. Напишите функцию, которая будет выдавать количество гласных в строке
 
 ```javascript
 vowelsCount('For the king!')     // 3
@@ -368,8 +368,8 @@ vowelsCount('For the king!')     // 3
 
 ```javascript
 function findVowels(str) {
-  let count = 0;
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let count = 0
+  const vowels = ['a', 'e', 'i', 'o', 'u']
 
   for (let char of str.toLowerCase()) {
     if (vowels.includes(char)) {
@@ -377,7 +377,7 @@ function findVowels(str) {
     }
   }
 
-  return count;
+  return count
 }
 ```
 
@@ -389,7 +389,7 @@ function findVowels(str) {
 
 ```javascript
 function findVowels(str) {
-  return str.match(/[aeiou]/gi).length || 0;
+  return str.match(/[aeiou]/gi).length || 0
 }
 ```
 
@@ -398,7 +398,7 @@ function findVowels(str) {
 
 ---
 
-##### 9. Сжатие строки
+##### 9. Напишите функцию, которая будет сжимать повторяющиеся символы до формата: Символ + количество повторений подряд
 
 ```javascript
 stringCompression('AAABbbbBcCCC')
@@ -421,8 +421,76 @@ stringCompression('A: AAAAA; T: TTTTTTT')
 
 ```javascript
 function stringCompression() {
-  const regexp = /(.)\1+/g;
-  return str.replace(regexp, (letters, letter) => letter + letters.length);
+  const regexp = /(.)\1+/g
+  return str.replace(regexp, (letters, letter) => letter + letters.length)
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 10. Напишите функцию, которая будет генерировать строку указанной длины со случайными символами
+
+```javascript
+generateRandomString(10)
+// => AmnUJiOPQl
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Составьте список нужных символов. Для генерации случайного символа из списка воспользуйтесь методами `charAt`, `Math.floor` и `Math.random`.
+
+</p>
+</details>
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```javascript
+function generateRandomString(length) {
+  let result = ''
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let charactersLength = characters.length
+
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength))
+  }
+
+  return result
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+function dec2hex (dec) {
+  return dec.toString(16).padStart(2, "0")
+}
+
+function generateRandomString(length){
+  let arr = new Uint8Array((length || 40) / 2)
+  window.crypto.getRandomValues(arr)
+  return Array.from(arr, dec2hex).join('')
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 3</b></summary>
+<p>
+
+Решение для строк в которых содержится не более 11 символов.
+```javascript
+function generateRandomString(length){
+  return Math.random().toString(36).substr(2, length)
 }
 ```
 
