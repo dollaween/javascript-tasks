@@ -13,12 +13,19 @@
 function rearrangeWords(str) {
   /** ВАШ КОД */
 }
+
 rearrangeWords('Bruce Willis')
+// => Willis Bruce
+
+rearrangeWords('Арнольд Шварценеггер')
+// => Шварценеггер Арнольд
 ```
-**Результат**
-```bash
-Willis Bruce
-```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+Используйте такие методы массива, как `split`, `join`, `reverse`. Либо воспользуйтесь регулряными выражениями и методом `replace`.
+</p>
+</details>
 
 <details><summary><b>Решение 1</b></summary>
 <p>
@@ -37,10 +44,7 @@ function rearrangeWords(str) {
 
 ```javascript
 function rearrangeWords(str) {
-  return str.replace(/(Bruce) (Willis)/, '$2 $1')
-}
-function rearrangeWords(str) {
-  return str.replace(/[A-Za-z]*[A-Za-z]*/, '$2 $1')
+  return str.replace(/([\wА-я]+) ([\wА-я]+)/, '$2 $1')
 }
 ```
 
@@ -56,6 +60,14 @@ function rearrangeWords(str) {
 replaceWords('Hello world, чудесный новый мир!')
 // => wrong wrong, wrong wrong wrong!
 ```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+С помощью регулярного выражения достаньте все слова и при помощи метода `replace` замените их на `wrong`.
+</p>
+
+</details>
 
 <details><summary><b>Решение</b></summary>
 <p>
@@ -84,6 +96,14 @@ wrongLatin('Wrong latin is cool')
 wrongLatin('Hello world !')
 // => elloHay orldway !
 ```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Воспользуйтесь регулярными выражениями и методом `replace`.
+
+</p>
+</details>
 
 <details><summary><b>Решение 1</b></summary>
 <p>
