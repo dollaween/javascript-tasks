@@ -496,3 +496,76 @@ function generateRandomString(length){
 
 </p>
 </details>
+
+---
+
+##### 11. В переданной строке найдите только повторяющиеся символы и верните их количество
+
+```javascript
+countDuplicates('abracadabra')
+// => { a: 5, b: 2, r: 2 }
+
+countDuplicates('another')
+// => {}
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Создайте пустой объект. Пройдитесь по каждому символу строки: если в объекте не содержится итерируемого символа — добавьте его со значением 1, иначе увеличьте количество на единицу.
+
+</p>
+</details>
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```javascript
+function countDuplicates() {
+  let obj = {}
+
+  for (let i = 0; i < str.length; i++) {
+    obj[str[i]] = Object.keys(obj).includes(str[i])
+      ? obj[str[i]] + 1
+      : 1
+  }
+
+  for (key in obj) {
+    if (obj.hasOwnProperty(key) && obj[key] === 1) {
+      delete obj[key]
+    }
+  }
+
+  return obj
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+function countDuplicates() {
+  let result = {}
+
+  let arr = str
+    .toLowerCase()
+    .split('')
+    .sort()
+    .join('')
+    .match(/(.)\1+/g)
+
+  arr && arr.forEach(element => {
+    result[element[0]] = element.length
+  });
+
+  return result
+}
+```
+
+</p>
+</details>
+
+---
