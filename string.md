@@ -594,7 +594,7 @@ firstNonRepeatingCharacter('aabbbccddddd')
 <details><summary><b>Решение</b></summary>
 <p>
 
-`str.indexOf()` возвращает индекс первого вхождения указанного значения в строке или -1, если значение не найдено. Проверяем вхождение значения, начиная от следующего (`i + 1`) — если не найдено, то значит символ уникален.
+`str.indexOf()` возвращает индекс первого вхождения указанного значения в строке или `-1`, если значение не найдено. Проверяем вхождение значения, начиная от следующего (`i + 1`) — если не найдено, то значит символ уникален.
 ```javascript
 function firstNonRepeatingCharacter(str) {
   for (let i = 0; i < str.length; i++) {
@@ -605,6 +605,55 @@ function firstNonRepeatingCharacter(str) {
   }
 
   return null
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 13. Напишите функцию, которая будет возвращать массив, состоящий из всех возможных перестановок символов передаваемой строки
+
+```javascript
+permute('ABC')
+// => ["ABC", "ACB", "BAC", "BCA", "CAB", "CBA"]
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Используйте рекурсию: возьмите текущий символ, передавая в рекурсию каждый раз всё более и более обрезанную версию строки.
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function permute() {
+  if (str.length < 2) return str
+
+  // Массив будет хранить наши перестановки
+  let permutations = []
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]
+
+    // Не итерируем текущий символ
+    if (str.indexOf(char) !== i)
+      continue
+
+    // Обрезаем строку
+    let remainingString = str.slice(0, i) + str.slice(i + 1, str.length)
+
+    // Объединяем результат рекурсии с текущим символом
+    for (let subPermutation of second(remainingString))
+      permutations.push(char + subPermutation)
+  }
+
+  return permutations
 }
 ```
 
