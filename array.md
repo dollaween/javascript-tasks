@@ -61,5 +61,4 @@ function shuffle(arr) {
 }
 ```
 
-</p>
-</details>
+---

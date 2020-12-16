@@ -12,6 +12,7 @@
 ### Категории задач:
 * [Строки](./string.md)
 * [Массивы](./array.md)
+* [Функции](./function.md)
 * [Регулярные выражения](./regexp.md)
 * [Браузер](./browser.md)
 * [Typescript](./typescript.md)
