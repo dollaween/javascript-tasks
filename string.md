@@ -344,3 +344,54 @@ function fibonacci(num) {
 
 </p>
 </details>
+
+---
+
+8. Напишите функцию, которая будет выдавать количество гласных в строке
+
+```javascript
+vowelsCount('For the king!')     // 3
+```
+
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Вариант 1: Создайте массив с гласными и счетчик от нуля. С помощью цикла, пройдитесь по всем символам строки. Если символ совпадает с одним из массива с гласными — добавляйте счетчику +1.
+
+Вариант 2: Воспользуйтесь регулярным выражением и методом `match`.
+
+</p>
+</details>
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```javascript
+function findVowels(str) {
+  let count = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+function findVowels(str) {
+  return str.match(/[aeiou]/gi).length || 0;
+}
+```
+
+</p>
+</details>
