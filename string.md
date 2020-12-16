@@ -586,6 +586,7 @@ firstNonRepeatingCharacter('aabbbccddddd')
 <details><summary><b>Решение</b></summary>
 <p>
 
+`str.indexOf()` возвращает индекс первого вхождения указанного значения в строке или -1, если значение не найдено. Проверяем вхождение значения, начиная от следующего (`i + 1`) — если не найдено, то значит символ уникален.
 ```javascript
 function firstNonRepeatingCharacter(str) {
   for (let i = 0; i < str.length; i++) {
