@@ -14,5 +14,6 @@
 * [Массивы](./array.md)
 * [Функции](./function.md)
 * [Регулярные выражения](./regexp.md)
+* [Условия](./conditions.md)
 * [Браузер](./browser.md)
 * [Typescript](./typescript.md)
