@@ -16,4 +16,5 @@
 * [Регулярные выражения](./regexp.md)
 * [Условия](./conditions.md)
 * [Браузер](./browser.md)
+* [Паттерны проектирования](./patterns.md)
 * [Typescript](./typescript.md)
