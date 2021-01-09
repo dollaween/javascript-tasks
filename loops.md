@@ -392,7 +392,7 @@ function treeTraversal(node, target) {
     node.children.some((child) => {
       const result = treeTraversal(child, target)
       if (result) {
-        return targetNode = node.id + ` -> ` + result
+        return targetNode = node.id + ' -> ' + result
       }
     })
   }
