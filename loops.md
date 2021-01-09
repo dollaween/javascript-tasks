@@ -318,3 +318,91 @@ console.log(result)
 
 </p>
 </details>
+
+---
+
+##### 5. Напишите рекурсивную функцию, которая будет возвращать всю цепь `id` элементов от начала до указанного
+Функция должна вернуть строку с `id` от рутового объекта до указанного.
+
+```javascript
+let result = treeTraversal(tree, 5)
+console.log(result)
+// => '1 -> 2 -> 5'
+
+result = treeTraversal(tree, 7)
+console.log(result)
+// => '1 -> 2 -> 4 -> 7'
+```
+
+<details><summary><b>Исходные данные</b></summary>
+<p>
+
+```javascript
+const tree = {
+  id: 1,
+  title: 'A',
+  children: [
+    {
+      id: 2,
+      title: 'B',
+      children: [
+        {
+          id: 3,
+          title: 'C'
+        },
+        {
+          id: 4,
+          title: 'D',
+          children: [
+            {
+              id: 7,
+              title: 'G'
+            }
+          ]
+        },
+        {
+          id: 5,
+          title: 'E'
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'F'
+    }
+  ]
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function treeTraversal(node, target) {
+  if (node.id === target) {
+    return node.id
+  }
+
+  let targetNode;
+
+  if (node.children) {
+    node.children.some((child) => {
+      const result = treeTraversal(child, target)
+      if (result) {
+        return targetNode = node.id + ` -> ` + result
+      }
+    })
+  }
+
+  return targetNode
+}
+
+const result = treeTraversal(tree, 4)
+console.log(result)
+```
+
+</p>
+</details>
