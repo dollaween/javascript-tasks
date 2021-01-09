@@ -222,3 +222,99 @@ console.log(result)
 
 </p>
 </details>
+
+---
+
+##### 4. Напишите рекурсивную функцию, которая будет возвращать родительский элемент элемента с указанным `id`
+Функция должна вернуть родительский элемент объекта.
+
+```javascript
+let result = treeTraversal(tree, 4)
+console.log(result)
+// {
+//   id: 2,
+//   title: 'B',
+//   children: [
+//     { id: 3, title: 'C' },
+//     { id: 4, title: 'D', children: [Array] },
+//     { id: 5, title: 'E' }
+//   ]
+// }
+
+result = treeTraversal(tree, 7)
+console.log(result)
+// => { id: 4, title: 'D', children: [ { id: 7, title: 'G' } ] }
+```
+
+<details><summary><b>Исходные данные</b></summary>
+<p>
+
+```javascript
+const tree = {
+  id: 1,
+  title: 'A',
+  children: [
+    {
+      id: 2,
+      title: 'B',
+      children: [
+        {
+          id: 3,
+          title: 'C'
+        },
+        {
+          id: 4,
+          title: 'D',
+          children: [
+            {
+              id: 7,
+              title: 'G'
+            }
+          ]
+        },
+        {
+          id: 5,
+          title: 'E'
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'F'
+    }
+  ]
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function treeTraversal(node, target, parent) {
+  if (node.id === target) {
+    return parent
+  }
+
+  let targetNode;
+
+  if (node.children) {
+    node.children.some((child) => {
+      const result = treeTraversal(child, target, node)
+      if (result) {
+        return targetNode = result
+      }
+    })
+  }
+
+  return targetNode
+}
+
+const result = treeTraversal(tree, 7)
+console.log(result)
+```
+
+</p>
+</details>
