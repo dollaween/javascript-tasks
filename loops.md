@@ -143,3 +143,82 @@ console.log(result)
 
 </p>
 </details>
+
+---
+
+##### 3. Напишите рекурсивную функцию, которая будет возвращать элемент дерева с указанным `id`
+Функция должна вернуть объект элемента дерева.
+
+```javascript
+const id = 5
+const result = treeTraversal(tree, id)
+console.log(result)
+// => { id: 5, title: 'E' }
+```
+
+<details><summary><b>Исходные данные</b></summary>
+<p>
+
+```javascript
+const tree = {
+  id: 1,
+  title: 'A',
+  children: [
+    {
+      id: 2,
+      title: 'B',
+      children: [
+        {
+          id: 3,
+          title: 'C'
+        },
+        {
+          id: 4,
+          title: 'D'
+        },
+        {
+          id: 5,
+          title: 'E'
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'F'
+    }
+  ]
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function treeTraversal(node, target) {
+  if (node.id === target) {
+    return node
+  }
+
+  let targetNode;
+
+  if (node.children) {
+    node.children.some((child) => {
+      const result = treeTraversal(child, target)
+      if (result) {
+        return targetNode = result
+      }
+    })
+  }
+
+  return targetNode
+}
+
+const result = treeTraversal(tree, 5)
+console.log(result)
+```
+
+</p>
+</details>
