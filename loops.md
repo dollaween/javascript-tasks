@@ -74,12 +74,19 @@ treeTraversal(tree)
 ---
 
 ##### 2. Напишите рекурсивную функцию обхода дерева объектов
-Функция должна вернуть массив с `title` каждого элемента дерева.
+Функция должна вернуть массив объектов, содержащих `title` и уровень вложенности каждого элемента дерева.
 
 ```javascript
 const result = treeTraversal(tree)
 console.log(result)
-// => [ 'A', 'B', 'C', 'D', 'E', 'F' ]
+// [
+//   { title: 'A', nesting: 0 },
+//   { title: 'B', nesting: 1 },
+//   { title: 'C', nesting: 2 },
+//   { title: 'D', nesting: 2 },
+//   { title: 'E', nesting: 2 },
+//   { title: 'F', nesting: 1 }
+// ]
 ```
 
 <details><summary><b>Исходные данные</b></summary>
@@ -117,12 +124,12 @@ const tree = {
 <p>
 
 ```javascript
-function treeTraversal(node) {
-  let output = [node.title]
+function treeTraversal(node, nesting = 0) {
+  let output = [{ title: node.title, nesting: nesting++ }]
 
   if (node.children) {
     node.children.forEach((child) => {
-      output = [...output, ...treeTraversal(child)]
+      output = [...output, ...treeTraversal(child, nesting)]
     })
   }
 
