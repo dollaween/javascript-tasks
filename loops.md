@@ -9,7 +9,7 @@
 ---
 
 ##### 1. Напишите рекурсивную функцию обхода дерева объектов
-Функция должна обойти каждый объект в дереве объектов и вывести его `title` в консоль.
+Функция должна обойти каждый элемент в дереве объектов и вывести его `title` в консоль.
 
 ```javascript
 treeTraversal(tree)
@@ -58,6 +58,7 @@ const tree = {
 ```javascript
 function treeTraversal(node) {
   console.log(node.title)
+
   if (node.children) {
     node.children.forEach((child) => {
       treeTraversal(child)
