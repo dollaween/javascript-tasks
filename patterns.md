@@ -94,7 +94,6 @@ const iterator = new Iterator(items)
 while (iterator.hasNext()) {
   console.log(iterator.next())
 }
-
 // => 'one'
 // => 'two'
 // => 'three'
