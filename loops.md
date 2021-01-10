@@ -687,7 +687,7 @@ fibonacci(9)    // 34
 </p>
 </details>
 
-<details><summary><b>Решение 1</b></summary>
+<details><summary><b>Решение циклом</b></summary>
 <p>
 
 ```javascript
@@ -705,7 +705,7 @@ function fibonacci(num) {
 </p>
 </details>
 
-<details><summary><b>Решение 2</b></summary>
+<details><summary><b>Решение рекурсией</b></summary>
 <p>
 
 Работает очень медленно:
