@@ -641,3 +641,29 @@ console.log(result)
 
 </p>
 </details>
+
+---
+
+##### 13. Вычислите сумму чисел всех элементов массива
+Напишите рекурсивную функцию, которая принимает массив чисел и возвращает их сумму.
+
+```javascript
+sumNumbers([1, 2, 3, 4, 5])
+// => 15
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function sumNumbers(arr) {
+  if (arr.length === 1) return arr[0]
+  return arr.shift() + sumNumbers(arr)
+}
+
+const result = sumNumbers([1, 2, 3, 4, 5])
+console.log(result)
+```
+
+</p>
+</details>
