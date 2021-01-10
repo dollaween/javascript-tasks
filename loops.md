@@ -406,3 +406,35 @@ console.log(result)
 
 </p>
 </details>
+
+---
+
+##### 6. Сумма всех чисел
+Напишите функцию, которая принимает число и возвращает сумму всех чисел от 1 до переданного числа.
+
+Например, `sumNumbers(3)` вернет `6`, так как `1 + 2 + 3 = 6`.
+
+```javascript
+const result = sumNumbers(5)
+console.log(result)
+// => 15
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function sumNumbers(num) {
+  if (num === 1) {
+    return 1
+  }
+
+  return num + sumNumbers(num - 1)
+}
+
+const answer = sumNumbers(5)
+console.log('answer: ' + answer)
+```
+
+</p>
+</details>
