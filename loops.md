@@ -612,3 +612,32 @@ console.log(result)
 </p>
 </details>
 
+---
+
+##### 12. Выведите диапазон чисел между указанными числами
+Напишите рекурсивную функцию, которая принимает два числа и возвращает массив целых чисел между ними.
+
+```javascript
+range(1, 9)
+// => [2, 3, 4, 5, 6, 7, 8]
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function range(cur, end) {
+  if (end <= cur + 1) return []
+
+  let list = range(cur, end - 1)
+  list.push(end - 1)
+
+  return list
+}
+
+const result = range(1, 9)
+console.log(result)
+```
+
+</p>
+</details>
