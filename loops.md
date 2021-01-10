@@ -430,8 +430,118 @@ function sumNumbers(num) {
   return num + sumNumbers(num - 1)
 }
 
-const answer = sumNumbers(5)
-console.log('answer: ' + answer)
+const result = sumNumbers(5)
+console.log(result)
+```
+
+</p>
+</details>
+
+---
+
+##### 7. Возведение в степень
+Напишите рекурсивную функцию, которая будет возводить число `base` в степень `exponent`. Если степень 0 — верните `1`.
+
+```javascript
+function power(base, exponent) {}
+
+power(2, 4)     // => 16
+power(2, 3)     // => 8
+power(2, 2)     // => 4
+power(2, 1)     // => 2
+power(2, 0)     // => 1
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function power(base, exponent) {
+  if (exponent < 1) {
+    return 1
+  }
+
+  return base * power(base, exponent - 1)
+}
+
+const result = power(2, 4)
+console.log(result)
+```
+
+</p>
+</details>
+
+---
+
+##### 8. Вычислите факториал
+Напишите рекурсивную функцию, которая будет вычислять факториал числа `num`. Факториал числа 1 — `1`.
+
+```javascript
+function factorial(num) {}
+
+factorial(5)     // 5 * 4 * 3 * 2 * 1 === 120
+factorial(7)     // 5040
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function factorial(num) {
+  if (num < 1) return 1
+
+  return num * factorial(num - 1)
+}
+
+const result = factorial(7)
+console.log(result)
+```
+
+</p>
+</details>
+
+---
+
+##### 9. Поиск примитивного значения в объекте
+Напишите рекурсивную функцию, которая принимает объект `obj` и примитивное значение `value`, и возвращает `true`, если объект содержит в себе переданное значение.
+
+```javascript
+function contains(obj, value) {}
+
+const nestedObject = {
+  data: {
+    info: {
+      person: {
+        name: 'Andrew',
+        age: 22
+      }
+    }
+  }
+}
+
+contains(nestedObject, 22)            // true
+contains(nestedObject, 'Andrew')      // true
+contains(nestedObject, 'something')   // false
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function contains(obj, value) {
+  for (key in obj) {
+    if (obj[key] === value) {
+      return true
+    }
+    if (typeof obj[key] === 'object') {
+      return contains(obj[key], value)
+    }
+  }
+  return false
+}
+
+const result = contains(nestedObject, 22)
+console.log(result)
 ```
 
 </p>
