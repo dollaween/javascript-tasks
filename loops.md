@@ -457,9 +457,7 @@ power(2, 0)     // => 1
 
 ```javascript
 function power(base, exponent) {
-  if (exponent < 1) {
-    return 1
-  }
+  if (exponent < 1) return 1
 
   return base * power(base, exponent - 1)
 }
@@ -541,6 +539,46 @@ function contains(obj, value) {
 }
 
 const result = contains(nestedObject, 22)
+console.log(result)
+```
+
+</p>
+</details>
+
+---
+
+##### 10. Посчитайте количество чисел в массиве
+Напишите рекурсивную функцию, которая принимает массив `array` и возвращает общее количество целых чисел хранящихся в нем и его вложенных массивах.
+
+```javascript
+function totalIntegers(array) {}
+
+const array = [[[6, 12, 3], [4, 'next']], 9, 'some', [100, 'bar', [[56]]]]
+
+totalIntegers(array)
+// => 7
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function totalIntegers(array) {
+	if (array.length === 0) return 0
+
+	let total = 0
+	let first = array.shift()
+
+	if (Array.isArray(first)) {
+		total += totalIntegers(first)
+	} else if (Number.isInteger(first)) {
+		total += 1
+	}
+
+	return total + totalIntegers(array)
+}
+
+const result = totalIntegers(array)
 console.log(result)
 ```
 
