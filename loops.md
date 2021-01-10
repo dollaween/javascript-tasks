@@ -564,18 +564,18 @@ totalIntegers(array)
 
 ```javascript
 function totalIntegers(array) {
-	if (array.length === 0) return 0
+  if (array.length === 0) return 0
 
-	let total = 0
-	let first = array.shift()
+  let total = 0
+  let first = array.shift()
 
-	if (Array.isArray(first)) {
-		total += totalIntegers(first)
-	} else if (Number.isInteger(first)) {
-		total += 1
-	}
+  if (Array.isArray(first)) {
+    total += totalIntegers(first)
+  } else if (Number.isInteger(first)) {
+    total += 1
+  }
 
-	return total + totalIntegers(array)
+  return total + totalIntegers(array)
 }
 
 const result = totalIntegers(array)
@@ -584,3 +584,31 @@ console.log(result)
 
 </p>
 </details>
+
+---
+
+##### 11. Найдите наибольший общий делитель двух положительных чисел
+Напишите рекурсивную функцию, которая принимает два положительных числа и возвращает наибольший общий делитель.
+
+```javascript
+gcd(140, 120)
+// => 20
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function gcd(a, b) {
+  if (!b) return a
+
+  return gcd(b, a % b)
+}
+
+const result = gcd(140, 130)
+console.log(result)
+```
+
+</p>
+</details>
+
