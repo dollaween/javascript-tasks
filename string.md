@@ -8,7 +8,7 @@
 
 ---
 
-##### 1. Переставьте слова местами
+##### 1. Переставьте два слова местами
 ```javascript
 function rearrangeWords(str) {
   /** ВАШ КОД */
@@ -299,7 +299,8 @@ function palindrome(str) {
 ##### 7. Напишите функцию, которая будет выдавать количество гласных в строке
 
 ```javascript
-vowelsCount('For the king!')     // 3
+vowelsCount('For the king!')
+// 3
 ```
 
 <details><summary><b>Подсказка</b></summary>
@@ -420,7 +421,7 @@ function generateRandomString(length) {
 
 ```javascript
 function dec2hex (dec) {
-  return dec.toString(16).padStart(2, "0")
+  return dec.toString(16).padStart(2, '0')
 }
 
 function generateRandomString(length){
@@ -581,7 +582,7 @@ permute('ABC')
 <p>
 
 ```javascript
-function permute() {
+function permute(str) {
   if (str.length < 2) return str
 
   // Массив будет хранить наши перестановки
@@ -598,7 +599,7 @@ function permute() {
     let remainingString = str.slice(0, i) + str.slice(i + 1, str.length)
 
     // Объединяем результат рекурсии с текущим символом
-    for (let subPermutation of second(remainingString))
+    for (let subPermutation of permute(remainingString))
       permutations.push(char + subPermutation)
   }
 
