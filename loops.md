@@ -420,7 +420,7 @@ console.log(result)
 // => 15
 ```
 
-<details><summary><b>Решение</b></summary>
+<details><summary><b>Решение через рекурсию</b></summary>
 <p>
 
 ```javascript
@@ -428,6 +428,21 @@ function sumNumbers(num) {
   if (num === 1) return 1
 
   return num + sumNumbers(num - 1)
+}
+
+const result = sumNumbers(5)
+console.log(result)
+```
+
+</p>
+</details>
+
+<details><summary><b>Математическое решение</b></summary>
+<p>
+
+```javascript
+function sumNumbers(num) {
+  return num * (num + 1) / 2
 }
 
 const result = sumNumbers(5)
