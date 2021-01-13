@@ -755,10 +755,8 @@ function isPossibleToCreatePalindrom(str) {
 
   const letterCount = {}
 
-  for (let i = 0; i < str.length; i++) {
-    letterCount[str[i]] = letterCount[str[i]]
-      ? letterCount[str[i]] + 1
-      : 1;
+  for (let val of str) {
+    letterCount[val] = (letterCount[val] || 0) + 1
   }
 
   let oddCounter = 0
