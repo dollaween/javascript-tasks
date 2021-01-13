@@ -136,3 +136,78 @@ function same (arr1, arr2) {
 
 </p>
 </details>
+
+---
+
+##### 5. Решите задачу не превышая сложность O(N)
+Напишите функцию, которая принимает массив фильмов `movies` и длительность `flightLength` . Функция должна вернуть `true`, если массив содержит два фильма, суммарная длительность которых равна заданной длительности `flightLength`.
+
+```javascript
+function findTwoMovies(movies, flightLength) {}
+
+const movies = [
+  { title: 'The Shawshank Redemption', flight: 142 },
+  { title: 'The Green Mile', flight: 189 },
+  { title: 'Interstellar', flight: 169 },
+  { title: 'Intouchables', flight: 112 }
+]
+
+findTwoMovies(movies, 311)    // true
+findTwoMovies(movies, 100)    // false
+```
+
+<details><summary><b>Неоптимальное решение через вложенные циклы</b></summary>
+<p>
+
+Сложность: O(N^2)
+
+Проблема данного решения:
+* 100 фильмов — 100 * 100 = 10 000 итераций
+* 1000 фильмов — 1000 * 1000 = 1 000 000 итераций
+
+```javascript
+function findTwoMovies(movies, flightLength) {
+  for (let i = 0; i < movies.length; i++) {
+    for (let k = 0; k < movies.length; k++) {
+      if (i === k) continue
+      if (movies[i].flight + movies[k].flight === flightLength) {
+        return true
+      }
+    }
+  }
+  return false
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение с помощью алгоритма Frequency counter</b></summary>
+<p>
+
+Сложность: O(N)
+
+Преимущества по сравнению с решением через вложенный цикл:
+* 100 фильмов — 100 итераций
+* 1000 фильмов — 1000 итераций
+
+```javascript
+function findTwoMovies(movies, flightLength) {
+  // В объекте будет хранится остаток времени после каждого фильма
+  let results = {}
+  for (let i = 0; i < movies.length; i++) {
+    // Если время фильма совпадает с одним из значений в results, то задача выполнена
+    if (results[movies[i].flight]) {
+      return true
+    }
+
+    // Вычисляем сколько времени нам требуется еще добавить за счет другого фильма и добавляем в объект
+    let result = flightLength - movies[i].flight
+    results[result] = true
+  }
+  return false
+}
+```
+
+</p>
+</details>
