@@ -211,3 +211,49 @@ function findTwoMovies(movies, flightLength) {
 
 </p>
 </details>
+
+---
+
+##### 6. Решите задачу с помощью алгоритма Frequency counter
+Напишите функцию, которая принимает два числа и возвращает `true`, если числа имеют одинаковую частоту цифр.
+
+```javascript
+function sameFrequency(num1, num2) {}
+
+sameFrequency(246, 462)       // true
+sameFrequency(83965, 35689)   // true
+sameFrequency(81, 38)         // false
+sameFrequency(11, 111)        // false
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+Сложность: O(N)
+
+```javascript
+function same(num1, num2) {
+  str1 = num1.toString()
+  str2 = num2.toString()
+
+  if (str1.length !== str2.length) {
+    return false
+  }
+
+  const freqCounter = {}
+
+  for (let val of str1) {
+    freqCounter[val] = (freqCounter[val] || 0) + 1
+  }
+
+  for (let val of str2) {
+    if (!freqCounter[val]) return false
+    freqCounter[val] -= 1
+  }
+
+  return true
+}
+```
+
+</p>
+</details>
