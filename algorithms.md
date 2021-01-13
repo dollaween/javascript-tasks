@@ -293,7 +293,7 @@ function areThereDuplicates(...args) {
 </p>
 </details>
 
-<details><summary><b>Решение с помощью алгоритма Multiple pointers</b></summary>
+<details><summary><b>Решение с помощью алгоритма Multiple Pointers</b></summary>
 <p>
 
 Сложность: O(N log N).
@@ -323,6 +323,55 @@ function areThereDuplicates(...args) {
 ```javascript
 function areThereDuplicates() {
   return new Set(arguments).size !== arguments.length
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 8. 
+Напишите фукнцию, которая принимает отсортированный массив чисел `numbers`. Функция должна найти и вернуть первую пару чисел, сумма которых равна нулю.
+
+```javascript
+function sumZero(numbers) {}
+
+sumZero([-3, -2, -1, 0, 1, 2, 3])     // [-3, 3]
+sumZero([-2, 0, 1, 3])                // undefined
+sumZero([1, 2, 3])                    // undefined
+```
+
+<details><summary><b>Неоптимальное решение через вложенный цикл</b></summary>
+<p>
+
+```javascript
+function sumZero(numbers) {
+  for (let i = 0; i < numbers.length; i++)
+    for (let k = i + 1; k < numbers.length; k++)
+      if (numbers[i] + numbers[k] === 0)
+        return [numbers[i], numbers[k]]
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение с помощью алгоритма Multiple Pointers</b></summary>
+<p>
+
+```javascript
+function sumZero(numbers) {
+  let left = 0
+  let right = numbers.length - 1
+
+  while (left < right) {
+    let sum = numbers[left] + numbers[right]
+
+    if (sum === 0) return [numbers[left], numbers[right]]
+    else if (sum < 0) left++
+    else right--
+  }
 }
 ```
 
