@@ -245,6 +245,38 @@ function anagram(strA, strB) {
 </p>
 </details>
 
+<details><summary><b>Решение 3: с помощью алгоритма Frequency counter</b></summary>
+<p>
+
+```javascript
+function cleanString(str) {
+  return str.replace(/[^\wА-я+]/g, '').toLowerCase()
+}
+
+function anagram(strA, strB) {
+  strA = cleanString(strA)
+  strB = cleanString(strB)
+
+  if (strA.length !== strB.length) return false
+
+  const freqCounter = {}
+
+  for (let val of strA) {
+    freqCounter[val] = (freqCounter[val] || 0) + 1
+  }
+
+  for (let val of strB) {
+    if (!freqCounter[val]) return false
+    freqCounter[val]--
+  }
+
+  return true
+}
+```
+
+</p>
+</details>
+
 ---
 
 ##### 6. Проверьте строку на палиндром
