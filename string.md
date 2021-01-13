@@ -248,7 +248,7 @@ function anagram(strA, strB) {
 ---
 
 ##### 6. Проверьте строку на палиндром
-*Палиндром* — это слово, которое читается одинаково слева направо.
+*Палиндром* — это слово, которое читается одинаково как слева направо, так и справа налево.
 
 ```javascript
 palindrome('Anna')                  // true
@@ -681,6 +681,61 @@ function stringChop(str, size) {
   return size > 0
     ? str.match(new RegExp('.{1,' + size + '}', 'g'))
     : [str]
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 16. Проверка возможности составления палиндрома
+Напишите функцию, которая принимает строку и проверяет, возможно ли из неё составить палиндром.
+
+*Палиндром* — это слово, которое читается одинаково как слева направо, так и справа налево.
+
+```javascript
+function isPossibleToCreatePalindrom(str) {}
+
+isPossibleToCreatePalindrom('Anna')
+// true
+
+isPossibleToCreatePalindrom('Sofia')
+// false
+
+isPossibleToCreatePalindrom('aaaabbb')
+// true, из этой строки мы можем составить палиндром, например 'aabbbaa'
+
+isPossibleToCreatePalindrom('even, never or odd!')
+// true, можно составить палиндром 'never, odd or even!'
+```
+
+<details><summary><b>Решение с помощью алгоритма Frequency counter</b></summary>
+<p>
+
+Сложность: O(N).
+
+```javascript
+function isPossibleToCreatePalindrom(str) {
+  str = str.replace(/[\W]/g, '').toLowerCase()
+
+  const letterCount = {}
+
+  for (let i = 0; i < str.length; i++) {
+    letterCount[str[i]] = letterCount[str[i]]
+      ? letterCount[str[i]] + 1
+      : 1;
+  }
+
+  let oddCounter = 0
+
+  for (letter in letterCount) {
+    if (letterCount[letter] % 2 === 1) {
+      oddCounter += 1
+    }
+  }
+
+  return oddCounter <= 1
 }
 ```
 
