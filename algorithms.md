@@ -331,7 +331,7 @@ function areThereDuplicates() {
 
 ---
 
-##### 8. 
+##### 8. Решите задачу не превышая сложность O(N)
 Напишите фукнцию, которая принимает отсортированный массив чисел `numbers`. Функция должна найти и вернуть первую пару чисел, сумма которых равна нулю.
 
 ```javascript
@@ -359,6 +359,8 @@ function sumZero(numbers) {
 
 <details><summary><b>Решение с помощью алгоритма Multiple Pointers</b></summary>
 <p>
+
+Сложность: O(N)
 
 ```javascript
 function sumZero(numbers) {
