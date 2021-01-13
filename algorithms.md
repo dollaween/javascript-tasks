@@ -260,7 +260,7 @@ function same(num1, num2) {
 
 ---
 
-##### 7. Решите задачу не превышая сложность O(N)
+##### 7. Решите задачу несколькими способами
 Напишите функцию, которая принимает неограниченное количество аргументов и возвращает `false`, если среди аргументов нет повторяющихся.
 
 ```javascript
@@ -275,6 +275,8 @@ areThereDuplicates('a', 'never', 'a')   // true
 <details><summary><b>Решение с помощью алгоритма Frequency counter</b></summary>
 <p>
 
+Сложность: O(N)
+
 ```javascript
 function areThereDuplicates(...args) {
   let freqCounter = {}
@@ -285,6 +287,42 @@ function areThereDuplicates(...args) {
   }
 
   return false
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение с помощью алгоритма Multiple pointers</b></summary>
+<p>
+
+Сложность: O(N log N).
+
+```javascript
+function areThereDuplicates(...args) {
+  args = args.sort();
+
+  let i = 0;
+
+  for (let k = 1; k < args.length; i++, k++) {
+    if (args[i] === args[k]) {
+      return true
+    }
+  }
+
+  return false
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 3</b></summary>
+<p>
+
+```javascript
+function areThereDuplicates() {
+  return new Set(arguments).size !== arguments.length
 }
 ```
 
