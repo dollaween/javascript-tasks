@@ -440,3 +440,55 @@ n^(1/(log n))
 
 </p>
 </details>
+
+---
+
+##### 10. Решите задачу не превышая сложность O(N)
+Напишите функцию, которая принимает отсортированный массив чисел и возвращает число уникальных чисел в массиве.
+
+```javascript
+countUniqueValues([1, 1, 1, 2, 2])                  // 2, уникальные числа — 1, 2
+countUniqueValues([-3, -2, -2, 0, 1, 1, 2, 3, 3])   // 6
+countUniqueValues([])                               // 0```
+```
+
+<details><summary><b>Решение 1 (Multiple Pointers)</b></summary>
+<p>
+
+```javascript
+function countUniqValues(arr) {
+  if (arr.length === 0) return 0
+
+  let count = 1
+  let i = 0
+  for (let k = 1; k < arr.length; i++, k++) {
+    if (arr[i] !== arr[k]) {
+      count += 1
+    }
+  }
+
+  return count
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2 (Multiple Pointers)</b></summary>
+<p>
+
+```javascript
+function countUniqValues(arr) {
+  if (arr.length === 0) return 0
+
+  let i = 0
+  for (let k = 1; k < arr.length; k++)
+    if (arr[i] !== arr[k])
+      arr[++i] = arr[k]
+
+  return i + 1
+}
+```
+
+</p>
+</details>
