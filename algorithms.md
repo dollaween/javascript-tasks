@@ -449,7 +449,7 @@ n^(1/(log n))
 ```javascript
 countUniqueValues([1, 1, 1, 2, 2])                  // 2, уникальные числа — 1, 2
 countUniqueValues([-3, -2, -2, 0, 1, 1, 2, 3, 3])   // 6
-countUniqueValues([])                               // 0```
+countUniqueValues([])                               // 0
 ```
 
 <details><summary><b>Решение 1 (Multiple Pointers)</b></summary>
