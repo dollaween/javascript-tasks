@@ -141,12 +141,6 @@ function filter(arr, exceptions) {
 <details><summary><b>Решение</b></summary>
 <p>
 
-**Сложность**: O(N)
-
-**Алгоритм**: Frequency counter
-
-Решение с помощью алгоритма Frequency counter.
-
 * **Сложность**: O(N)
 * **Алгоритм**: Frequency counter
 
