@@ -125,7 +125,7 @@ filter([1, 2, 3, 4, 5], [2, 4])
 <details><summary><b>Неоптимальное решение</b></summary>
 <p>
 
-**Сложность:** O(N^2)
+* **Сложность**: O(N^2)
 
 ```javascript
 function filter(arr, exceptions) {
