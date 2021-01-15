@@ -15,7 +15,7 @@
 **Цель задач:** Знать о наличии и уметь применять встроенные методы массивов.
 
 Найти все методы можно здесь:
-* [MDN. String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)
+* [MDN. Array](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ---
 
@@ -122,13 +122,42 @@ filter([1, 2, 3, 4, 5], [2, 4])
 // [1, 3, 5]
 ```
 
-<details><summary><b>Решение</b></summary>
+<details><summary><b>Неоптимальное решение</b></summary>
 <p>
+
+**Сложность:** O(N^2)
 
 ```javascript
 function filter(arr, exceptions) {
   return arr.filter((val) => {
     return exceptions.every((except) => except !== val)
+  })
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+**Сложность**: O(N)
+
+**Алгоритм**: Frequency counter
+
+Решение с помощью алгоритма Frequency counter.
+
+* **Сложность**: O(N)
+* **Алгоритм**: Frequency counter
+
+```javascript
+function filter(arr, exceptions) {
+  const freqCounter = {}
+  for (let val of exceptions) {
+    freqCounter[val] = val
+  }
+  return arr.filter((val) => {
+    return val !== freqCounter[val]
   })
 }
 ```
