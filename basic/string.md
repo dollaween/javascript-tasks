@@ -36,12 +36,27 @@ console.log(str.charAt(0))
 
 ---
 
-##### 2. Выведите в консоль `true`, если в строке есть указанный символ
+##### 2. Выведите в консоль последний символ строки
+
+<details><summary><b>Решение</b></summary>
+<p>
 
 ```javascript
 const str = 'My string'
-let char = 's'
+console.log(str[str.length - 1])
+```
 
+</p>
+</details>
+
+---
+
+##### 3. Выведите в консоль `true`, если в строке есть указанный символ
+
+```javascript
+const str = 'My string'
+
+let char = 's'
 console.log(/* code... */)
 // true
 
@@ -62,17 +77,26 @@ str.includes(str, char)
 
 ---
 
-##### 3. 
+##### 4. Выведите в консоль индекс первого вхождения указанного символа/слова
 
 ```javascript
+const str = 'After a storm comes a calm'
 
+let char = 'r'
+console.log(/* code... */)
+// 4
+
+let word = 'storm'
+console.log(/* code... */)
+// 8
 ```
 
 <details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
-
+str.indexOf(char)
+str.indexOf(word)
 ```
 
 </p>
