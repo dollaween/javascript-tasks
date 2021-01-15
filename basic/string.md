@@ -12,14 +12,6 @@
 
 ---
 
-<div align="center">
-
-### Поиск по строкам
-
-</div>
-
----
-
 ##### 1. Выведите в консоль первый символ строки
 
 <details><summary><b>Решение</b></summary>
@@ -97,6 +89,62 @@ console.log(/* code... */)
 ```javascript
 str.indexOf(char)
 str.indexOf(word)
+```
+
+</p>
+</details>
+
+---
+
+##### 5. Выведите в консоль `true`, если строка начинается со слова `We`
+
+```javascript
+const str = 'We rob banks'
+console.log(/* code */)
+// true
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+console.log(str.startsWith('We'))
+```
+
+</p>
+</details>
+
+---
+
+##### 6. Выведите в консоль `true`, если строка заканчивается словом `banks`
+
+```javascript
+const str = 'We rob banks'
+console.log(/* code */)
+// true
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+console.log(str.endsWith('banks'))
+```
+
+</p>
+</details>
+
+---
+
+##### 7. Замена слова в строке
+Дана строка "Jax Briggs", замените слово "Jax" на "Jacqui" и выведите в консоль
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const str = 'Jax Briggs';
+console.log(str.replace('Jax', 'Jacqui'));
 ```
 
 </p>
