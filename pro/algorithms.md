@@ -36,7 +36,7 @@ same([1, 2, 1], [4, 4, 1])    // false, должна быть та же част
 <details><summary><b>Неоптимальное решение</b></summary>
 <p>
 
-**Сложность:** O(N^2).
+**Сложность:** O(N^2)
 
 ```javascript
 function same(arr1, arr2) {
@@ -99,7 +99,7 @@ function same (arr1, arr2) {
 
 ---
 
-##### 2. Фильтрация элементов с массивом исключений
+##### 2. Решите задачу не превышая сложность O(N)
 Напишите функцию, которая принимает массив элементов и массив исключений. Функция должна вернуть отфильтрованный массив, в котором не содержится ни одно из исключений.
 
 ```javascript
@@ -148,7 +148,53 @@ function filter(arr, exceptions) {
 
 ---
 
-##### 5. Решите задачу не превышая сложность O(N)
+##### 3. Решите задачу с помощью алгоритма Frequency counter
+Напишите функцию, которая принимает два числа и возвращает `true`, если числа имеют одинаковую частоту цифр.
+
+```javascript
+function sameFrequency(num1, num2) {}
+
+sameFrequency(246, 462)       // true, так как во втором числе присутствуют те же цифры, что и в первом
+sameFrequency(83965, 35689)   // true
+sameFrequency(81, 38)         // false
+sameFrequency(11, 111)        // false
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+* **Сложность:** O(N)
+
+```javascript
+function same(num1, num2) {
+  str1 = num1.toString()
+  str2 = num2.toString()
+
+  if (str1.length !== str2.length) {
+    return false
+  }
+
+  const freqCounter = {}
+
+  for (let val of str1) {
+    freqCounter[val] = (freqCounter[val] || 0) + 1
+  }
+
+  for (let val of str2) {
+    if (!freqCounter[val]) return false
+    freqCounter[val] -= 1
+  }
+
+  return true
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 4. Решите задачу не превышая сложность O(N)
 Напишите функцию, которая принимает массив фильмов `movies` и длительность `flightLength` . Функция должна вернуть `true`, если массив содержит два фильма, суммарная длительность которых равна заданной длительности `flightLength`.
 
 ```javascript
@@ -215,52 +261,6 @@ function findTwoMovies(movies, flightLength) {
     results[result] = true
   }
   return false
-}
-```
-
-</p>
-</details>
-
----
-
-##### 6. Решите задачу с помощью алгоритма Frequency counter
-Напишите функцию, которая принимает два числа и возвращает `true`, если числа имеют одинаковую частоту цифр.
-
-```javascript
-function sameFrequency(num1, num2) {}
-
-sameFrequency(246, 462)       // true
-sameFrequency(83965, 35689)   // true
-sameFrequency(81, 38)         // false
-sameFrequency(11, 111)        // false
-```
-
-<details><summary><b>Решение</b></summary>
-<p>
-
-Сложность: O(N)
-
-```javascript
-function same(num1, num2) {
-  str1 = num1.toString()
-  str2 = num2.toString()
-
-  if (str1.length !== str2.length) {
-    return false
-  }
-
-  const freqCounter = {}
-
-  for (let val of str1) {
-    freqCounter[val] = (freqCounter[val] || 0) + 1
-  }
-
-  for (let val of str2) {
-    if (!freqCounter[val]) return false
-    freqCounter[val] -= 1
-  }
-
-  return true
 }
 ```
 
