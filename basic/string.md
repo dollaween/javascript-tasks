@@ -1,10 +1,14 @@
 <div align="center">
 
-<h1>Задачи по Javascript: Циклы, рекурсии</h1>
+<h1>Базовые задачи по строкам</h1>
 
 <a href="https://github.com/dollaween/javascript-questions">Вопросы</a> | <a href="https://github.com/dollaween/javascript-tests">Тесты</a> | <a href="https://github.com/dollaween/javascript-tasks">Задачи</a>
 
 </div>
+
+---
+
+### Поиск по строкам
 
 ---
 
@@ -43,6 +47,24 @@ console.log(/* code... */)
 
 ```javascript
 str.includes(str, char)
+```
+
+</p>
+</details>
+
+---
+
+##### 3. 
+
+```javascript
+
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+
 ```
 
 </p>
