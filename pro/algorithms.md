@@ -1,14 +1,28 @@
 <div align="center">
 
-<h1>Задачи по Javascript: Алгоритмы</h1>
+# Задачи по алгоритмам
 
-<a href="https://github.com/dollaween/javascript-tasks">На главную</a> | <a href="https://github.com/dollaween/javascript-questions">Вопросы</a> | <a href="https://github.com/dollaween/javascript-tests">Тесты</a>
+[Вопросы](https://github.com/dollaween/javascript-questions)
+|
+[Тесты](https://github.com/dollaween/javascript-tests)
+|
+[Задачи](https://github.com/dollaween/javascript-tasks)
 
 </div>
 
 ---
 
-##### 4. Решите задачу не превышая сложность O(N)
+**Цель задач:** Практика применения Javascript-алгоритмов.
+
+Для решения этих задач необходимо разбираться в **нотации О большое** и знать такие алгоритмы, как:
+* Divide and Conquer
+* Frequency counter
+* Multiple Pointers
+* Sliding Window
+
+---
+
+##### 1. Решите задачу не превышая сложность O(N)
 Напишите функцию, которая принимает два массива чисел и возвращает true, если второй массив содержит те же числа, но в квадрате (порядок чисел значения не имеет).
 
 ```javascript
@@ -19,10 +33,10 @@ same([1, 2, 3], [1, 4])       // false, количество элементов 
 same([1, 2, 1], [4, 4, 1])    // false, должна быть та же частота
 ```
 
-<details><summary><b>Неоптимальное решение через цикл</b></summary>
+<details><summary><b>Неоптимальное решение</b></summary>
 <p>
 
-Данное решение неоптимально, так как имеет сложность O(N^2).
+**Сложность:** O(N^2).
 
 ```javascript
 function same(arr1, arr2) {
@@ -45,10 +59,11 @@ function same(arr1, arr2) {
 </p>
 </details>
 
-<details><summary><b>Решение с помощью алгоритма Frequency counter</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
-Более выгодное решение, имеет сложность O(N).
+* **Сложность:** O(N^2)
+* **Алгоритм:** Frequency counter
 
 ```javascript
 function same (arr1, arr2) {
@@ -76,6 +91,55 @@ function same (arr1, arr2) {
   }
 
   return true
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 2. Фильтрация элементов с массивом исключений
+Напишите функцию, которая принимает массив элементов и массив исключений. Функция должна вернуть отфильтрованный массив, в котором не содержится ни одно из исключений.
+
+```javascript
+function filter(arr, exceptions) {}
+
+filter([1, 2, 3, 4, 5], [2, 4])
+// [1, 3, 5]
+```
+
+<details><summary><b>Неоптимальное решение</b></summary>
+<p>
+
+* **Сложность:** O(N^2)
+
+```javascript
+function filter(arr, exceptions) {
+  return arr.filter((val) => {
+    return exceptions.every((except) => except !== val)
+  })
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+* **Сложность:** O(N)
+* **Алгоритм:** Frequency counter
+
+```javascript
+function filter(arr, exceptions) {
+  const freqCounter = {}
+  for (let val of exceptions) {
+    freqCounter[val] = val
+  }
+  return arr.filter((val) => {
+    return val !== freqCounter[val]
+  })
 }
 ```
 
