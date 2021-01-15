@@ -2,7 +2,11 @@
 
 # Базовые задачи по строкам
 
-<a href="https://github.com/dollaween/javascript-questions">Вопросы</a> | <a href="https://github.com/dollaween/javascript-tests">Тесты</a> | <a href="https://github.com/dollaween/javascript-tasks">Задачи</a>
+[Вопросы](https://github.com/dollaween/javascript-questions)
+|
+[Тесты](https://github.com/dollaween/javascript-tests)
+|
+[Задачи](https://github.com/dollaween/javascript-tasks)
 
 </div>
 
