@@ -10,10 +10,10 @@
 ---
 
 ### Базовые задачи на знание синтаксиса
-*[String](./basic/string.md)
-*[Number](./basic/number.md)
-*[Array](./basic/array.md)
-*[Object](./basic/object.md)
+* [String](./basic/string.md)
+* [Number](./basic/number.md)
+* [Array](./basic/array.md)
+* [Object](./basic/object.md)
 
 ---
 
