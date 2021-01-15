@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Базовые задачи по строкам</h1>
+# Базовые задачи по строкам
 
 <a href="https://github.com/dollaween/javascript-questions">Вопросы</a> | <a href="https://github.com/dollaween/javascript-tests">Тесты</a> | <a href="https://github.com/dollaween/javascript-tasks">Задачи</a>
 
