@@ -85,7 +85,8 @@ it('str2 should not contain str1', () => {
 ```javascript
 const num1 = 0.1
 const num2 = 0.2
-it('expression num1 + num2 should been equal 0.3', () => {})
+
+it('expression num1 + num2 should be equal 0.3', () => {})
 ```
 
 <details><summary><b>Решение</b></summary>
@@ -97,8 +98,39 @@ it('expression num1 + num2 should been equal 0.3', () => {})
 const num1 = 0.1
 const num2 = 0.2
 
-it('expression num1 + num2 should been equal 0.3', () => {
+it('expression num1 + num2 should be equal 0.3', () => {
   expect(num1 + num2).toBeCloseTo(0.3)
+})
+```
+
+</p>
+</details>
+
+---
+
+##### 4. Напишите валидные тесты
+
+```javascript
+const str = 'Pink clouds'
+const arr = [1, 2, 3]
+
+it('length of str should be 11', () => {})
+it('length of arr should be 3', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const str = 'Pink clouds'
+const arr = [1, 2, 3]
+
+it('length of str should be 11', () => {
+  expect(str).toHaveLength(11)
+})
+
+it('length of arr should be 3', () => {
+  expect(arr).toHaveLength(3)
 })
 ```
 
