@@ -136,3 +136,87 @@ it('length of arr should be 3', () => {
 
 </p>
 </details>
+
+---
+
+##### 5. Напишите валидные тесты
+
+```javascript
+const arr1 = [1, 2, 3, 4, 5]
+const arr2 = [1, 2, 3, 4, 5]
+const arr3 = [3, 4]
+
+it('arr1 should be equal arr2', () => {})
+it('arr1 should not be equal arr3', () => {})
+it('arr1 should contain arr3', () => {})
+it('arr3 should not contain arr1', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const arr1 = [1, 2, 3, 4, 5]
+const arr2 = [1, 2, 3, 4, 5]
+const arr3 = [3, 4]
+
+it('arr1 should be equal arr2', () => {
+  expect(arr1).toEqual(arr2)
+})
+
+it('arr1 should not be equal arr3', () => {
+  expect(arr1).not.toEqual(arr3)
+})
+
+it('arr1 should contain arr3', () => {
+  expect(arr1).toEqual(expect.arrayContaining(arr3))
+})
+
+it('arr3 should not contain arr1', () => {
+  expect(arr3).not.toEqual(expect.arrayContaining(arr1))
+})
+```
+
+</p>
+</details>
+
+---
+
+##### 6. Напишите валидные тесты
+
+```javascript
+const good1 = { title: 'shirt', color: 'blue' }
+const good2 = { title: 'shirt', color: 'blue' }
+const good3 = { title: 'shirt' }
+
+it('good1 should be equal good2', () => {})
+it('good1 should contain good3', () => {})
+it('good3 should not contain good1', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const good1 = { title: 'shirt', color: 'blue' }
+const good2 = { title: 'shirt', color: 'blue' }
+const good3 = { title: 'shirt' }
+
+it('good1 should be equal good2', () => {
+  expect(good1).toEqual(good2)
+})
+
+it('good1 should contain good3', () => {
+  expect(good1).toEqual(expect.objectContaining(good3))
+})
+
+it('good3 should not contain good1', () => {
+  expect(good3).not.toEqual(expect.objectContaining(good1))
+})
+```
+
+</p>
+</details>
+
+
+
