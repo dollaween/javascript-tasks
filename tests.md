@@ -77,3 +77,30 @@ it('str2 should not contain str1', () => {
 
 </p>
 </details>
+
+---
+
+##### 3. Напишите валидный тест
+
+```javascript
+const num1 = 0.1
+const num2 = 0.2
+it('expression num1 + num2 should been equal 0.3', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+Для float-чисел вместо `.toBe` нужно использовать `.toBeCloseTo`.
+
+```javascript
+const num1 = 0.1
+const num2 = 0.2
+
+it('expression num1 + num2 should been equal 0.3', () => {
+  expect(num1 + num2).toBeCloseTo(0.3)
+})
+```
+
+</p>
+</details>
