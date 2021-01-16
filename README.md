@@ -14,6 +14,7 @@
 * [Number](./basic/number.md)
 * [Array](./basic/array.md)
 * [Object](./basic/object.md)
+* [Тестирование на Jest](./tests.md)
 
 ---
 
