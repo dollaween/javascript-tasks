@@ -218,5 +218,70 @@ it('good3 should not contain good1', () => {
 </p>
 </details>
 
+---
 
+##### 7. Напишите валидные тесты
 
+```javascript
+const house = {
+  forSale: true,
+  rooms: 5,
+  bedroom: {
+    area: 24,
+    wallColor: ['white', 'grey', 'red'],
+    'ceiling.height': 3
+  },
+  'wall.type': 'wood'
+}
+
+it('house should have property forSale', () => {})
+it('house should have property wall.type', () => {})
+it('house should have property rooms and it should be equal 5', () => {})
+it('bedroom should have area equals 24', () => {})
+it('bedroom should have ceiling.height equals 3', () => {})
+it('bedroom should have wallColor equal ["white", "grey", "red"]', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const house = {
+  forSale: true,
+  rooms: 5,
+  bedroom: {
+    area: 24,
+    wallColor: ['white', 'grey', 'red'],
+    'ceiling.height': 3
+  },
+  'wall.type': 'wood'
+}
+
+it('house should have property forSale', () => {
+  expect(house).toHaveProperty('forSale')
+})
+
+it('house should have property wall.type', () => {
+  expect(house).toHaveProperty(['wall.type'])
+})
+
+it('house should have property rooms and it should be equal 5', () => {
+  expect(house).toHaveProperty('rooms', 5)
+})
+
+it('bedroom should have area equals 24', () => {
+  expect(house).toHaveProperty('bedroom.area', 24)
+  expect(house).toHaveProperty(['bedroom', 'area'], 24)
+})
+
+it('bedroom should have ceiling.height equals 3', () => {
+  expect(house).toHaveProperty(['bedroom', 'ceiling.height'], 3)
+})
+
+it('bedroom should have wallColor equal ["white", "grey", "red"]', () => {
+  expect(house).toHaveProperty('bedroom.wallColor', ['white', 'grey', 'red'])
+})
+```
+
+</p>
+</details>
