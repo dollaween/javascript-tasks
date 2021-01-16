@@ -39,7 +39,7 @@ it('str1 should equal str2', () => {
   expect(str1).toBe(str2)
 })
 
-it('str1 should equal str3', () => {
+it('str1 should not equal str3', () => {
   expect(str1).not.toBe(str3)
 })
 ```
