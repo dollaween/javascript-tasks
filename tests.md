@@ -285,3 +285,35 @@ it('bedroom should have wallColor equal ["white", "grey", "red"]', () => {
 
 </p>
 </details>
+
+---
+
+##### 8. Напишите валидные тесты
+Проверьте, что функция `getSomething` вообще хоть что-то возвращает (не обязательно `true`), а функция `emptyFunc` не возвращает ничего.
+
+```javascript
+const getSomething = () => true
+const emptyFunc = () => {}
+
+it('getSomething should return something', () => {})
+it('emptyFunc should not return anything', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const getSomething = () => true
+const emptyFunc = () => {}
+
+it('getSomething should return something', () => {
+  expect(getSomething()).toBeDefined()
+})
+
+it('emptyFunc should not return anything', () => {
+  expect(emptyFunc()).not.toBeDefined()
+})
+```
+
+</p>
+</details>
