@@ -1,8 +1,12 @@
 <div align="center">
 
-<h1>Задачи по Javascript: Массивы</h1>
+# Задачи среднего уровня по массивам
 
-<a href="https://github.com/dollaween/javascript-tasks">На главную</a> | <a href="https://github.com/dollaween/javascript-questions">Вопросы</a> | <a href="https://github.com/dollaween/javascript-tests">Тесты</a>
+[Вопросы](https://github.com/dollaween/javascript-questions)
+|
+[Тесты](https://github.com/dollaween/javascript-tests)
+|
+[Задачи](https://github.com/dollaween/javascript-tasks)
 
 </div>
 
@@ -61,4 +65,5 @@ function shuffle(arr) {
 }
 ```
 
----
+</p>
+</details>
