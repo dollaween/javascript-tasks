@@ -440,3 +440,45 @@ function countUniqValues(arr) {
 
 </p>
 </details>
+
+---
+
+##### 8. Решите задачу не превышая сложности O(N)
+Напишите функцию, которая принимает отсортированный массив чисел и целевое число. Функция должна вернуть `true`, если в массиве есть пара чисел, среднее значение которых равняется целевому числу.
+
+```javascript
+function averagePair(arr, val) {}
+
+averagePair([1, 2, 3], 2.5)
+// true, так как среднее значение 2 и 3 = 2.5
+averagePair([1, 2, 3, 4, 5, 6, 7, 10, 11], 8)   // true
+averagePair([1, 2, 3], 2.2)                     // false
+averagePair([], 2)                              // false
+
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+* **Сложность**: O(N)
+* **Алгоритм**: Multiple Pointers
+
+```javascript
+function averagePair(arr, val) {
+  let left = 0
+  let right = arr.length - 1
+
+  while (left < right) {
+    let average = (arr[left] + arr[right]) / 2
+
+    if (average === val) return true
+    else if (average < val) left++
+    else right++
+  }
+
+  return false
+}
+```
+
+</p>
+</details>
