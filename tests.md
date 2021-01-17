@@ -48,11 +48,13 @@ it('str1 should not equal str3', () => {
 
 it('str1 should contain str3', () => {
   expect(str1).toContain(str3)
+  expect(str1).toMatch(new RegExp(str3))
   expect(str1).toEqual(expect.stringContaining(str3))
 })
 
 it('str3 should not contain str1', () => {
   expect(str3).not.toContain(str1)
+  expect(str3).not.toMatch(new RegExp(str1))
   expect(str3).not.toEqual(expect.stringContaining(str1))
 })
 
@@ -121,6 +123,7 @@ const num = 5
 
 it('arr1 should be equal arr2', () => {
   expect(arr1).toEqual(arr2)
+  expect(arr1).toMatchObject(arr2)
 })
 
 it('arr1 should not be equal arr3', () => {
@@ -175,6 +178,7 @@ it('good1 should be equal good2', () => {
 
 it('good1 should contain good3', () => {
   expect(good1).toEqual(expect.objectContaining(good3))
+  expect(good1).toMatchObject(good2)
 })
 
 it('good3 should not contain good1', () => {
@@ -336,6 +340,45 @@ it('getSomething should return something', () => {
 
 it('emptyFunc should not return anything', () => {
   expect(emptyFunc()).not.toBeDefined()
+})
+```
+
+</p>
+</details>
+
+---
+
+##### 8. Напишите валидные тесты
+
+```javascript
+const errorMessage = 'do you wanted it?'
+
+function getError() {
+  throw new Error(errorMessage)
+}
+
+it('function getError should throw error', () => {})
+it('function getError should throw error and message should be errorMessage', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const errorMessage = 'do you wanted it?'
+
+function getError() {
+  throw new Error(errorMessage)
+}
+
+it('function getError should throw error', () => {
+  expect(() => getError()).toThrow()
+})
+
+it('function getError should throw error and message should be errorMessage', () => {
+  expect(() => getError()).toThrow(errorMessage)
+  expect(() => getError()).toThrow(new RegExp(errorMessage))
+  expect(() => getError()).toThrow(new Error(errorMessage))
 })
 ```
 
