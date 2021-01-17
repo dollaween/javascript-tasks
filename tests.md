@@ -384,3 +384,77 @@ it('function getError should throw error and message should be errorMessage', ()
 
 </p>
 </details>
+
+---
+
+##### 9. Исправьте тесты так, чтобы они стали валидными
+Функции `it` изменять нельзя.
+
+```javascript
+describe('Test context', () => {
+  let context = { login: 'Arnold' }
+
+  it('should can change login', () => {
+    context.login = 'Simon'
+    expect(context.login).toBe('Simon')
+  })
+
+  it('default login should be Arnold', () => {
+    expect(context.login).toBe('Arnold')
+  })
+})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+describe('Test context', () => {
+  let context = { login: 'Arnold' }
+
+  beforeEach(() => {
+    context = { login: 'Arnold' }
+  })
+
+  it('should can change login', () => {
+    context.login = 'Simon'
+    expect(context.login).toBe('Simon')
+  })
+
+  it('default login should be Arnold', () => {
+    expect(context.login).toBe('Arnold')
+  })
+})
+```
+
+</p>
+</details>
+
+---
+
+##### 10. Напишите валидный тест
+Даны несколько массивов цифр. Напишите тест, который проверяет что arr[0] + arr[1] равняется arr[2]. Для решения используйте только одну функцию `it`.
+
+```javascript
+[1, 1, 2]
+[1, 2, 3]
+[2, 1, 3]
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+it.each`
+  a    | b    | expected
+  ${1} | ${1} | ${2}
+  ${1} | ${2} | ${3}
+  ${2} | ${1} | ${3}
+`('$a + $b should return $expected', ({ a, b, expected }) => {
+  expect(a + b).toBe(expected);
+});
+```
+
+</p>
+</details>
+
