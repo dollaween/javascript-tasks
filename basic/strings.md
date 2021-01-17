@@ -12,7 +12,7 @@
 
 ---
 
-**Цель задач:** Знать о наличии и уметь применять встроенные методы строки.
+**Цель задач:** Знать о наличии и уметь применять встроенные методы `String`.
 
 Найти все методы можно здесь:
 * [MDN. String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)

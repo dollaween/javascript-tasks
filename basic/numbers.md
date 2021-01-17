@@ -1,6 +1,6 @@
 <div align="center">
 
-# Базовые задачи по строкам
+# Базовые задачи по числам
 
 [Вопросы](https://github.com/dollaween/javascript-questions)
 |
@@ -12,10 +12,10 @@
 
 ---
 
-**Цель задач:** Знать о наличии и уметь применять встроенные методы строки.
+**Цель задач:** Знать о наличии и уметь применять встроенные методы `Number`.
 
 Найти все методы можно здесь:
-* [MDN. String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)
+* [MDN. Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
 ---
 
