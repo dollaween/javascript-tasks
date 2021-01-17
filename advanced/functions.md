@@ -1,6 +1,6 @@
 <div align="center">
 
-# Задачи по нотации О большое
+# Продвинутые задачи по функциям
 
 [Вопросы](https://github.com/dollaween/javascript-questions)
 |
