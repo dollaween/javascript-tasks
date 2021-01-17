@@ -26,8 +26,8 @@ const str3 = 'is coming'
 it('str1 should equal str2', () => {})
 it('str1 should not equal str3', () => {})
 it('str1 should contain str3', () => {})
-it('str3 should not contain str1', () => {});
-it('length of str1 should be 11', () => {});
+it('str3 should not contain str1', () => {})
+it('length of str1 should be 11', () => {})
 ```
 
 <details><summary><b>Решение</b></summary>
@@ -54,11 +54,11 @@ it('str1 should contain str3', () => {
 it('str3 should not contain str1', () => {
   expect(str3).not.toContain(str1)
   expect(str3).not.toEqual(expect.stringContaining(str1))
-});
+})
 
 it('length of str1 should be 11', () => {
   expect(str1).toHaveLength(16)
-});
+})
 ```
 
 </p>
@@ -100,9 +100,11 @@ it('expression num1 + num2 should be equal 0.3', () => {
 const arr1 = [1, 2, 3, 4, 5]
 const arr2 = [1, 2, 3, 4, 5]
 const arr3 = [3, 4]
+const num = 5
 
 it('arr1 should be equal arr2', () => {})
 it('arr1 should not be equal arr3', () => {})
+it('arr1 should contain num', () => {})
 it('arr1 should contain arr3', () => {})
 it('arr3 should not contain arr1', () => {})
 it('length of arr1 should be 5', () => {})
@@ -115,6 +117,7 @@ it('length of arr1 should be 5', () => {})
 const arr1 = [1, 2, 3, 4, 5]
 const arr2 = [1, 2, 3, 4, 5]
 const arr3 = [3, 4]
+const num = 5
 
 it('arr1 should be equal arr2', () => {
   expect(arr1).toEqual(arr2)
@@ -122,6 +125,10 @@ it('arr1 should be equal arr2', () => {
 
 it('arr1 should not be equal arr3', () => {
   expect(arr1).not.toEqual(arr3)
+})
+
+it('arr1 should contain num', () => {
+  expect(arr1).toContain(num)
 })
 
 it('arr1 should contain arr3', () => {
@@ -249,6 +256,39 @@ it('bedroom should have wallColor equal ["white", "grey", "red"]', () => {
 ---
 
 ##### 6. Напишите валидные тесты
+
+```javascript
+const turtles1 = [{ name: 'Leo' }, { name: 'Raph' }, { name: 'Don' }]
+const turtles2 = [{ name: 'Leo' }, { name: 'Don' }]
+const leo = { name: 'Leo' }
+
+it('turtles1 should contain leo', () => {})
+it('turtles1 should contain turtles2', () => {})
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const turtles1 = [{ name: 'Leo' }, { name: 'Raph' }, { name: 'Don' }]
+const turtles2 = [{ name: 'Leo' }, { name: 'Don' }]
+const leo = { name: 'Leo' }
+
+it('turtles1 should contain leo', () => {
+  expect(turtles1).toContainEqual(leo)
+})
+
+it('turtles1 should contain turtles2', () => {
+  expect(turtles1).toEqual(expect.arrayContaining(turtles2))
+})
+```
+
+</p>
+</details>
+
+---
+
+##### 7. Напишите валидные тесты
 Проверьте, что функция `getSomething` вообще хоть что-то возвращает (не обязательно `true`), а функция `emptyFunc` не возвращает ничего.
 
 ```javascript
