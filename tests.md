@@ -441,7 +441,15 @@ describe('Test context', () => {
 [2, 1, 3]
 ```
 
-<details><summary><b>Решение</b></summary>
+<details><summary><b>Подсказка</b></summary>
+<p>
+
+Для решения используйте метод `it.each`.
+
+</p>
+</details>
+
+<details><summary><b>Решение 1</b></summary>
 <p>
 
 ```javascript
@@ -458,3 +466,18 @@ it.each`
 </p>
 </details>
 
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```javascript
+it.each([
+  [1, 1, 2],
+  [1, 2, 3],
+  [2, 1, 3],
+])('$a + $b should return $expected', (a, b, expected) => {
+  expect(a + b).toBe(expected);
+});
+```
+
+</p>
+</details>
