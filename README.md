@@ -10,10 +10,10 @@
 ---
 
 ### Базовые задачи на знание синтаксиса и встроенных методов
-* [String](./basic/string.md)
-* [Number](./basic/number.md)
-* [Array](./basic/array.md)
-* [Object](./basic/object.md)
+* [String](./basic/strings.md)
+* [Number](./basic/numbers.md)
+* [Array](./basic/arrays.md)
+* [Object](./basic/objects.md)
 * [Тестирование на Jest](./tests.md)
 
 ---
