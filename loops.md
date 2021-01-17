@@ -496,6 +496,24 @@ factorial(5)     // 5 * 4 * 3 * 2 * 1 === 120
 factorial(7)     // 5040
 ```
 
+<details><summary><b>Решение через цикл</b></summary>
+<p>
+
+```javascript
+function factorial(num) {
+  let total = 1
+
+  for (let i = num; i > 0; i--) {
+    total *= i
+  }
+
+  return total
+}
+```
+
+</p>
+</details>
+
 <details><summary><b>Решение</b></summary>
 <p>
 
@@ -505,9 +523,6 @@ function factorial(num) {
 
   return num * factorial(num - 1)
 }
-
-const result = factorial(7)
-console.log(result)
 ```
 
 </p>
