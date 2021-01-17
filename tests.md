@@ -19,6 +19,56 @@
 ##### 1. Напишите валидные тесты
 
 ```javascript
+const str1 = 'Winter is coming'
+const str2 = 'Winter is coming'
+const str3 = 'is coming'
+
+it('str1 should equal str2', () => {})
+it('str1 should not equal str3', () => {})
+it('str1 should contain str3', () => {})
+it('str3 should not contain str1', () => {});
+it('length of str1 should be 11', () => {});
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+const str1 = 'Winter is coming'
+const str2 = 'Winter is coming'
+const str3 = 'is coming'
+
+it('str1 should equal str2', () => {
+  expect(str1).toBe(str2)
+})
+
+it('str1 should not equal str3', () => {
+  expect(str1).not.toBe(str3)
+})
+
+it('str1 should contain str3', () => {
+  expect(str1).toContain(str3)
+  expect(str1).toEqual(expect.stringContaining(str3))
+})
+
+it('str3 should not contain str1', () => {
+  expect(str3).not.toContain(str1)
+  expect(str3).not.toEqual(expect.stringContaining(str1))
+});
+
+it('length of str1 should be 11', () => {
+  expect(str1).toHaveLength(16)
+});
+```
+
+</p>
+</details>
+
+---
+
+##### 1. Напишите валидные тесты
+
+```javascript
 const str1 = 'Another great day'
 const str2 = str1
 const str3 = 'Another great week'
