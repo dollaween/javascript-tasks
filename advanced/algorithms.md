@@ -482,3 +482,39 @@ function averagePair(arr, val) {
 
 </p>
 </details>
+
+---
+
+##### 9. 
+Напишите функцию, которая принимает подстроку и строку. Функция должна вернуть `true`, если в строке содержатся символы из подстроки. Между символами подстроки могут содержаться другие символы, но порядок подстроки не должен меняться.
+
+```javascript
+function isSubsequence(str1, str2) {}
+
+isSubsequence('Hello', 'Hello world')     // true
+isSubsequence('sing', 'sting')            // true, в 'sting' содержится 'sing'
+isSubsequence('abc', 'acb')               // false, порядок букв важен
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+* **Сложность**: O(A + B)
+* **Алгоритм**: Multiple Pointers
+
+```javascript
+function isSubsequence(str1, str2) {
+  if (!str1) return true
+
+  let i = 0
+  for (let k = 0; k < str2.length; k++) {
+    if (i === str1.length - 1) return true
+    if (str1[i] === str2[k]) i++
+  }
+
+  return false
+}
+```
+
+</p>
+</details>
