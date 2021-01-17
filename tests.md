@@ -258,28 +258,52 @@ it('bedroom should have wallColor equal ["white", "grey", "red"]', () => {
 ##### 6. Напишите валидные тесты
 
 ```javascript
-const turtles1 = [{ name: 'Leo' }, { name: 'Raph' }, { name: 'Don' }]
+const turtles1 = [
+  { name: 'Leo' },
+  { name: 'Don' },
+  { name: 'Raph', features: { color: 'red' } },
+]
 const turtles2 = [{ name: 'Leo' }, { name: 'Don' }]
+const turtles3 = [{ name: 'Leo' }, { name: 'Raph' }]
 const leo = { name: 'Leo' }
+const raph = { name: 'Raph' }
 
 it('turtles1 should contain leo', () => {})
+it('turtles1 should contain raph', () => {})
 it('turtles1 should contain turtles2', () => {})
+it('turtles1 should contain turtles3', () => {})
 ```
 
 <details><summary><b>Решение</b></summary>
 <p>
 
 ```javascript
-const turtles1 = [{ name: 'Leo' }, { name: 'Raph' }, { name: 'Don' }]
+const turtles1 = [
+  { name: 'Leo' },
+  { name: 'Don' },
+  { name: 'Raph', features: { color: 'red' } },
+]
 const turtles2 = [{ name: 'Leo' }, { name: 'Don' }]
+const turtles3 = [{ name: 'Leo' }, { name: 'Raph' }]
 const leo = { name: 'Leo' }
+const raph = { name: 'Raph' }
 
 it('turtles1 should contain leo', () => {
   expect(turtles1).toContainEqual(leo)
 })
 
+it('turtles1 should contain raph', () => {
+  expect(turtles1).toContainEqual(expect.objectContaining(raph))
+})
+
 it('turtles1 should contain turtles2', () => {
   expect(turtles1).toEqual(expect.arrayContaining(turtles2))
+})
+
+it('turtles1 should contain turtles3', () => {
+  turtles3.forEach((turtle) => {
+    expect(turtles1).toContainEqual(expect.objectContaining(turtle))
+  })
 })
 ```
 
