@@ -66,71 +66,7 @@ it('length of str1 should be 11', () => {
 
 ---
 
-##### 1. Напишите валидные тесты
-
-```javascript
-const str1 = 'Another great day'
-const str2 = str1
-const str3 = 'Another great week'
-
-it('str1 should equal str2', () => {})
-it('str1 should not equal str3', () => {})
-```
-
-<details><summary><b>Решение</b></summary>
-<p>
-
-```javascript
-const str1 = 'Another great day'
-const str2 = str1
-const str3 = 'Another great week'
-
-it('str1 should equal str2', () => {
-  expect(str1).toBe(str2)
-})
-
-it('str1 should not equal str3', () => {
-  expect(str1).not.toBe(str3)
-})
-```
-
-</p>
-</details>
-
----
-
-##### 2. Напишите валидные тесты
-
-```javascript
-const str1 = 'Rainy day'
-const str2 = 'day'
-
-it('str1 should contain str2', () => {})
-it('str2 should not contain str1', () => {})
-```
-
-<details><summary><b>Решение</b></summary>
-<p>
-
-```javascript
-const str1 = 'Rainy day'
-const str2 = 'day'
-
-it('str1 should contain str2', () => {
-  expect(str1).toEqual(expect.stringContaining(str2))
-})
-
-it('str2 should not contain str1', () => {
-  expect(str2).toEqual(expect.not.stringContaining(str1))
-})
-```
-
-</p>
-</details>
-
----
-
-##### 3. Напишите валидный тест
+##### 2. Напишите валидный тест
 
 ```javascript
 const num1 = 0.1
@@ -158,38 +94,7 @@ it('expression num1 + num2 should be equal 0.3', () => {
 
 ---
 
-##### 4. Напишите валидные тесты
-
-```javascript
-const str = 'Pink clouds'
-const arr = [1, 2, 3]
-
-it('length of str should be 11', () => {})
-it('length of arr should be 3', () => {})
-```
-
-<details><summary><b>Решение</b></summary>
-<p>
-
-```javascript
-const str = 'Pink clouds'
-const arr = [1, 2, 3]
-
-it('length of str should be 11', () => {
-  expect(str).toHaveLength(11)
-})
-
-it('length of arr should be 3', () => {
-  expect(arr).toHaveLength(3)
-})
-```
-
-</p>
-</details>
-
----
-
-##### 5. Напишите валидные тесты
+##### 3. Напишите валидные тесты
 
 ```javascript
 const arr1 = [1, 2, 3, 4, 5]
@@ -200,6 +105,7 @@ it('arr1 should be equal arr2', () => {})
 it('arr1 should not be equal arr3', () => {})
 it('arr1 should contain arr3', () => {})
 it('arr3 should not contain arr1', () => {})
+it('length of arr1 should be 5', () => {})
 ```
 
 <details><summary><b>Решение</b></summary>
@@ -225,6 +131,10 @@ it('arr1 should contain arr3', () => {
 it('arr3 should not contain arr1', () => {
   expect(arr3).not.toEqual(expect.arrayContaining(arr1))
 })
+
+it('length of arr1 should be 5', () => {
+  expect(arr1).toHaveLength(5)
+})
 ```
 
 </p>
@@ -232,7 +142,7 @@ it('arr3 should not contain arr1', () => {
 
 ---
 
-##### 6. Напишите валидные тесты
+##### 4. Напишите валидные тесты
 
 ```javascript
 const good1 = { title: 'shirt', color: 'blue' }
@@ -270,7 +180,7 @@ it('good3 should not contain good1', () => {
 
 ---
 
-##### 7. Напишите валидные тесты
+##### 5. Напишите валидные тесты
 
 ```javascript
 const house = {
@@ -338,7 +248,7 @@ it('bedroom should have wallColor equal ["white", "grey", "red"]', () => {
 
 ---
 
-##### 8. Напишите валидные тесты
+##### 6. Напишите валидные тесты
 Проверьте, что функция `getSomething` вообще хоть что-то возвращает (не обязательно `true`), а функция `emptyFunc` не возвращает ничего.
 
 ```javascript
