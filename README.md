@@ -26,6 +26,7 @@
 ### Задачи продвинутого уровня
 * [Алгоритмы](./advanced/algorithms.md)
 * [Нотация О больше](./advanced/big-o.md)
+* [Функции](./advanced/functions.md)
 
 ---
 
