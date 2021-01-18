@@ -22,7 +22,11 @@
 
 ---
 
-## Frequency counter
+<div align="center">
+
+### Frequency counter
+
+</div>
 
 ---
 
@@ -198,7 +202,11 @@ function same(num1, num2) {
 
 ---
 
-## Multiple Pointers
+<div align="center">
+
+#### Multiple Pointers
+
+</div>
 
 ---
 
