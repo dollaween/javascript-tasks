@@ -79,23 +79,17 @@ function same (arr1, arr2) {
     return false
   }
 
-  let counter1 = {}
-  let counter2 = {}
+  let freqCounter = {}
   for (let val of arr1) {
-    counter1[val] = (counter1[val] || 0) + 1
-  }
-  for (let val of arr2) {
-    counter2[val] = (counter2[val] || 0) + 1
+    let squared = val ** 2
+    freqCounter[squared] = (freqCounter[squared] || 0) + 1
   }
 
-  for (let key in counter1) {
-    let exponented = key ** 2
-    if (!exponented in counter2) {
+  for (let val of arr2) {
+    if (!freqCounter[val]) {
       return false
     }
-    if (counter2[exponented] !== counter1[key]) {
-      return false
-    }
+    freqCounter[val] -= 1
   }
 
   return true
@@ -172,6 +166,7 @@ sameFrequency(11, 111)        // false
 <p>
 
 * **Сложность:** O(N)
+* **Алгоритм**: Frequency counter
 
 ```javascript
 function same(num1, num2) {
@@ -202,14 +197,6 @@ function same(num1, num2) {
 
 ---
 
-<div align="center">
-
-#### Multiple Pointers
-
-</div>
-
----
-
 ##### 4. Решите задачу не превышая сложность O(N)
 Напишите функцию, которая принимает массив фильмов `movies` и длительность `flightLength` . Функция должна вернуть `true`, если массив содержит два фильма, суммарная длительность которых равна заданной длительности `flightLength`.
 
@@ -227,10 +214,10 @@ findTwoMovies(movies, 311)    // true
 findTwoMovies(movies, 100)    // false
 ```
 
-<details><summary><b>Неоптимальное решение через вложенные циклы</b></summary>
+<details><summary><b>Неоптимальное решение</b></summary>
 <p>
 
-Сложность: O(N^2)
+* **Сложность**: O(N^2)
 
 Проблема данного решения:
 * 100 фильмов — 100 * 100 = 10 000 итераций
@@ -253,10 +240,11 @@ function findTwoMovies(movies, flightLength) {
 </p>
 </details>
 
-<details><summary><b>Решение с помощью алгоритма Frequency counter</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
-Сложность: O(N)
+* **Сложность**: O(N)
+* **Алгоритм**: Frequency counter
 
 Преимущества по сравнению с решением через вложенный цикл:
 * 100 фильмов — 100 итераций
@@ -297,10 +285,11 @@ areThereDuplicates(1, 2, 2)             // true
 areThereDuplicates('a', 'never', 'a')   // true
 ```
 
-<details><summary><b>Решение с помощью алгоритма Frequency counter</b></summary>
+<details><summary><b>Решение</b></summary>
 <p>
 
-Сложность: O(N)
+* **Сложность**: O(N)
+* **Алгоритм**: Frequency counter
 
 ```javascript
 function areThereDuplicates(...args) {
@@ -318,7 +307,29 @@ function areThereDuplicates(...args) {
 </p>
 </details>
 
-<details><summary><b>Решение с помощью алгоритма Multiple Pointers</b></summary>
+---
+
+<div align="center">
+
+#### Multiple Pointers
+
+</div>
+
+---
+
+##### 5. Решите задачу с помощью алгоритма Multiple Pointers
+Напишите функцию, которая принимает неограниченное количество аргументов и возвращает `false`, если среди аргументов нет повторяющихся.
+
+```javascript
+function areThereDuplicates(...args) {}
+
+areThereDuplicates(1, 2, 3)             // false
+areThereDuplicates(56, 'some', 'b')     // false
+areThereDuplicates(1, 2, 2)             // true
+areThereDuplicates('a', 'never', 'a')   // true
+```
+
+<details><summary><b>Решение</b></summary>
 <p>
 
 Сложность: O(N log N).
