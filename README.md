@@ -17,7 +17,7 @@
 ---
 
 ### Задачи среднего уровня
-* [Алгоритмы поиска](./basic/search.md)
+* [Алгоритмы поиска](./middle/search.md)
 * [Массивы](./middle/arrays.md)
 * [Регулярные выражения](./middle/regexp.md)
 * [Тестирование на Jest](./middle/tests.md)
