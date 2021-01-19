@@ -73,29 +73,28 @@ jumpSearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 15)  // -1
 
 ```javascript
 function jumpSearch(arr, target) {
-
-	const length = arr.length
-	const step = Math.floor(Math.sqrt(length))
-	let blockStart = 0
+  const length = arr.length
+  const step = Math.floor(Math.sqrt(length))
+  let blockStart = 0
   let currentStep = step
 
-	while (arr[Math.min(currentStep, length) - 1] < target) {
-		blockStart = currentStep
-		currentStep += step
+  while (arr[Math.min(currentStep, length) - 1] < target) {
+    blockStart = currentStep
+    currentStep += step
 
-		if (blockStart >= length)
-			return -1
-	}
+    if (blockStart >= length)
+      return -1
+  }
 
-	while (arr[blockStart] < target) {
-		blockStart++
-		if (blockStart === Math.min(currentStep, length))
-			return -1
-	}
+  while (arr[blockStart] < target) {
+    blockStart++
+    if (blockStart === Math.min(currentStep, length))
+      return -1
+  }
 
-	return arr[blockStart] === target
-		? blockStart
-	  : -1
+  return arr[blockStart] === target
+    ? blockStart
+    : -1
 }
 ```
 
