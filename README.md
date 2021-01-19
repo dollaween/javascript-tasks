@@ -13,11 +13,11 @@
 * [String](./basic/strings.md)
 * [Number](./basic/numbers.md)
 * [Array](./basic/arrays.md)
-* [Алгоритмы](./basic/algorithms.md)
 
 ---
 
 ### Задачи среднего уровня
+* [Алгоритмы поиска](./basic/search.md)
 * [Массивы](./middle/arrays.md)
 * [Регулярные выражения](./middle/regexp.md)
 * [Тестирование на Jest](./middle/tests.md)
