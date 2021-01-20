@@ -38,6 +38,7 @@ BFS(tree, 7)
 ```
 
 <details><summary><b>Исходные данные</b></summary>
+<p>
 
 ```javascript
 const tree = [{
@@ -71,6 +72,8 @@ const tree = [{
   id: 12
 }]
 ```
+
+</p>
 </details>
 
 <details><summary><b>Решение</b></summary>
@@ -113,6 +116,7 @@ function BFS(tree, target) {
 ---
 
 ##### 2. Depth First Search (pre-order)
+Напишите функцию, которая принимает дерево объектов (или массив деревьев) и id искомого объекта. Функция должна проходить по дереву алгоритмом Depth First Search (pre-order) и возвращать искомый объект, или `undefined`, если объект не найден. Каждый пройденный элемент должен быть выведен в консоль.
 
 ```javascript
 function DFSPreOrder(tree, target) {}
@@ -172,7 +176,7 @@ const tree = [{
 <p>
 
 ```javascript
-function DFS(tree, target) {
+function DFSPreOrder(tree, target) {
   let result
 
   function traversal(node) {
@@ -210,9 +214,21 @@ function DFS(tree, target) {
 ---
 
 ##### 3. Depth First Search (post-order)
+Напишите функцию, которая принимает дерево объектов (или массив деревьев) и id искомого объекта. Функция должна проходить по дереву алгоритмом Depth First Search (post-order) и возвращать искомый объект, или `undefined`, если объект не найден. Каждый пройденный элемент должен быть выведен в консоль.
 
 ```javascript
+function DFSPostOrder(tree, target) {}
 
+DFSPostOrder(tree, 6)
+// Current node is: 2
+// Current node is: 3
+// Current node is: 5
+// Current node is: 4
+// Current node is: 1
+// Current node is: 6
+// Finded!
+// Current node is: 0
+// { id: 6 }
 ```
 
 <details><summary><b>Исходные данные</b></summary>
@@ -258,7 +274,36 @@ const tree = [{
 <p>
 
 ```javascript
+function DFSPostOrder(tree, target) {
+  let result
 
+  function traversal(node) {
+    if (node.children) {
+      for (let i = 0; i < node.children.length; i++) {
+        if (result) break;
+        traversal(node.children[i])
+      }
+    }
+
+    console.log('Current node is: ' + node.id)
+
+    if (node.id === target) {
+      console.log('Finded!')
+      return result = node
+    }
+  }
+
+  if (Array.isArray(tree)) {
+    for (let i = 0; i < tree.length; i++) {
+      if (result) break
+      traversal(tree[i])
+    }
+  } else {
+    traversal(tree)
+  }
+
+  return result
+}
 ```
 
 </p>
