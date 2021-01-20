@@ -38,6 +38,7 @@ BFS(tree, 7)
 ```
 
 <details><summary><b>Исходные данные</b></summary>
+
 ```javascript
 const tree = [{
   id: 0,
