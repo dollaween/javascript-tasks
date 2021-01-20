@@ -751,3 +751,61 @@ function fibonacci(num) {
 
 </p>
 </details>
+
+---
+
+##### 15. Сложение цифр числа
+Напишите функцию, которая принимает число и складывает все цифры в числе до тех пор, пока не останется одна цифра.
+
+```javascript
+function digitsSum(num) {}
+
+digitsSum(89)
+// 89 => 8 + 9 = 17
+//    => 1 + 7 = 8
+//    => 8
+
+digitsSum(84712)
+// 84712 => 8 + 4 + 7 + 1 + 2 = 22
+//       => 2 + 2 = 4
+//       => 4
+```
+
+<details><summary><b>Решение циклом</b></summary>
+<p>
+
+```javascript
+function digitsSum(num) {
+  let nums = num.toString().split('')
+
+  while (nums.length > 1) {
+    nums = nums
+      .reduce((acc, cur) => acc + Number(cur), 0)
+      .toString()
+      .split('')
+  }
+
+  return Number(nums[0])
+}
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение рекурсией</b></summary>
+<p>
+
+```javascript
+function digitsSum(num) {
+  const nums = num.toString().split('')
+
+  const res = nums.reduce((acc, cur) => acc + Number(cur), 0)
+
+  return res >= 10
+    ? getSum(res)
+    : res
+}
+```
+
+</p>
+</details>
