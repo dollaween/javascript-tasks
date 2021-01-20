@@ -12,7 +12,7 @@
 
 ---
 
-**Цель задач:** Практика применения алгоритмов поиска и изменения деревьев объектов
+**Цель задач:** Практика применения алгоритмов поиска и изменения деревьев объектов.
 
 Для решения этих задач нужно разбираться в:
 * Рекурсии
@@ -227,7 +227,6 @@ DFSPostOrder(tree, 6)
 // Current node is: 1
 // Current node is: 6
 // Finded!
-// Current node is: 0
 // { id: 6 }
 ```
 
@@ -285,7 +284,9 @@ function DFSPostOrder(tree, target) {
       }
     }
 
-    console.log('Current node is: ' + node.id)
+    if (!result) {
+      console.log('Current node is: ' + node.id)
+    }
 
     if (node.id === target) {
       console.log('Finded!')
