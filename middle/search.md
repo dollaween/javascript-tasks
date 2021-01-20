@@ -29,6 +29,8 @@ linearSearch([1, 2, 3, 4, 5], 10)       // -1
 <details><summary><b>Решение</b></summary>
 <p>
 
+* **Сложность:** O(N)
+
 ```javascript
 function linearSearch(arr, val) {
   for (let i = 0; i < arr.length; i++) {
@@ -52,6 +54,8 @@ function linearSearch(arr, val) {
 <details><summary><b>Решение</b></summary>
 <p>
 
+* **Сложность:** O(log N)
+
 ```javascript
 
 ```
@@ -70,6 +74,8 @@ jumpSearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 15)  // -1
 
 <details><summary><b>Решение</b></summary>
 <p>
+
+* **Сложность:** O(√n)
 
 ```javascript
 function jumpSearch(arr, target) {
@@ -100,4 +106,3 @@ function jumpSearch(arr, target) {
 
 </p>
 </details>
-
