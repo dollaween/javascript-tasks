@@ -26,6 +26,7 @@
 
 ### Задачи продвинутого уровня
 * [Алгоритмы](./advanced/algorithms.md)
+* * [Multiple Pointers](./advanced/algorithms/multiple-pointers.md)
 * [Деревья объектов](./advanced/trees.md)
 * [Нотация О больше](./advanced/big-o.md)
 * [Функции](./advanced/functions.md)
