@@ -31,7 +31,7 @@ areThereDuplicates('a', 'never', 'a')   // true
 <details><summary><b>Решение</b></summary>
 <p>
 
-Сложность: O(N log N).
+* **Сложность:** O(N log N)
 
 ```javascript
 function areThereDuplicates(...args) {
@@ -54,6 +54,7 @@ function areThereDuplicates(...args) {
 
 <details><summary><b>Другое решение</b></summary>
 <p>
+
 Решение через `Set`.
 
 ```javascript
@@ -96,7 +97,7 @@ function sumZero(numbers) {
 <details><summary><b>Решение</b></summary>
 <p>
 
-Сложность: O(N)
+* **Сложность:** O(N)
 
 ```javascript
 function sumZero(numbers) {
@@ -130,6 +131,8 @@ countUniqueValues([])                               // 0
 <details><summary><b>Решение 1</b></summary>
 <p>
 
+* **Сложность:** O(N)
+
 ```javascript
 function countUniqValues(arr) {
   if (arr.length === 0) return 0
@@ -151,6 +154,8 @@ function countUniqValues(arr) {
 
 <details><summary><b>Решение 2</b></summary>
 <p>
+
+* **Сложность:** O(N)
 
 ```javascript
 function countUniqValues(arr) {
@@ -188,7 +193,6 @@ averagePair([], 2)                              // false
 <p>
 
 * **Сложность**: O(N)
-* **Алгоритм**: Multiple Pointers
 
 ```javascript
 function averagePair(arr, val) {
@@ -227,7 +231,6 @@ isSubsequence('abc', 'acb')               // false, порядок букв ва
 <p>
 
 * **Сложность**: O(A + B)
-* **Алгоритм**: Multiple Pointers
 
 ```javascript
 function isSubsequence(str1, str2) {
