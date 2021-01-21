@@ -25,8 +25,10 @@
 ---
 
 ### Задачи продвинутого уровня
-* [Алгоритмы](./advanced/algorithms.md)
+* Алгоритмы
+  * [Frequency Counter](./advanced/algorithms/frequency-counter.md)
   * [Multiple Pointers](./advanced/algorithms/multiple-pointers.md)
+  * [Другие](./advanced/algorithms/others.md)
 * [Деревья объектов](./advanced/trees.md)
 * [Нотация О больше](./advanced/big-o.md)
 * [Функции](./advanced/functions.md)
