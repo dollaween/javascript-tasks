@@ -28,6 +28,7 @@
 * Алгоритмы
   * [Frequency Counter](./advanced/algorithms/frequency-counter.md)
   * [Multiple Pointers](./advanced/algorithms/multiple-pointers.md)
+  * [Sliding Window](./advanced/algorithms/sliding-window.md)
   * [Другие](./advanced/algorithms/others.md)
 * [Деревья объектов](./advanced/trees.md)
 * [Нотация О больше](./advanced/big-o.md)
