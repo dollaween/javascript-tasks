@@ -32,7 +32,7 @@
   * [Другие](./advanced/algorithms/others.md)
 * [Деревья объектов](./advanced/trees.md)
 * Структуры данных
-  * [data-structures](./advanced/data-structures/singly-linked-list)
+  * [Односвязный список / Singly Linked List](./advanced/data-structures/singly-linked-list.md)
 * [Нотация О больше](./advanced/big-o.md)
 * [Функции](./advanced/functions.md)
 
