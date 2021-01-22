@@ -31,6 +31,8 @@
   * [Sliding Window](./advanced/algorithms/sliding-window.md)
   * [Другие](./advanced/algorithms/others.md)
 * [Деревья объектов](./advanced/trees.md)
+* Структуры данных
+  * [data-structures](./advanced/data-structures/singly-linked-list)
 * [Нотация О больше](./advanced/big-o.md)
 * [Функции](./advanced/functions.md)
 
