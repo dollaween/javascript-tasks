@@ -1,6 +1,6 @@
 <div align="center">
 
-# Задачи по алгоритму Multiple Pointers
+# Задачи по паттерну Multiple Pointers
 
 [Вопросы](https://github.com/dollaween/javascript-questions)
 |
@@ -12,11 +12,11 @@
 
 ---
 
-**Цель задач:** Практика применения алгоритма Multiple Pointers.
+**Цель задач:** Практика применения паттерна Multiple Pointers.
 
 ---
 
-##### 1. Решите задачу с помощью алгоритма Multiple Pointers
+##### 1. Решите задачу с помощью паттерна Multiple Pointers
 Напишите функцию, которая принимает неограниченное количество аргументов и возвращает `false`, если среди аргументов нет повторяющихся.
 
 ```javascript
@@ -119,7 +119,7 @@ function sumZero(numbers) {
 
 ---
 
-##### 3. Решите задачу с помощью алгоритма Multiple Pointers
+##### 3. Решите задачу с помощью паттерна Multiple Pointers
 Напишите функцию, которая принимает отсортированный массив чисел и возвращает число уникальных чисел в массиве.
 
 ```javascript
@@ -204,7 +204,7 @@ function averagePair(arr, val) {
 
     if (average === val) return true
     else if (average < val) left++
-    else right++
+    else right--
   }
 
   return false
@@ -216,7 +216,7 @@ function averagePair(arr, val) {
 
 ---
 
-##### 5. Решите задачу используя алгоритм Multiple Pointers
+##### 5. Решите задачу используя паттерн Multiple Pointers
 Напишите функцию, которая принимает подстроку и строку. Функция должна вернуть `true`, если в строке содержатся символы из подстроки. Между символами подстроки могут содержаться другие символы, но порядок подстроки не должен меняться.
 
 ```javascript
