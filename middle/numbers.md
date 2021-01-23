@@ -1,6 +1,6 @@
 <div align="center">
 
-# Задачи среднего уровня по массивам
+# Задачи среднего уровня по числам
 
 [Вопросы](https://github.com/dollaween/javascript-questions)
 |
