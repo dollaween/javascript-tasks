@@ -21,6 +21,7 @@
 * [Массивы](./middle/arrays.md)
 * [Регулярные выражения](./middle/regexp.md)
 * [Тестирование на Jest](./middle/tests.md)
+* [Числа](./middle/numbers.md)
 
 ---
 

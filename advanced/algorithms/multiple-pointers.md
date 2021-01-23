@@ -195,15 +195,15 @@ averagePair([], 2)                              // false
 * **Сложность**: O(N)
 
 ```javascript
-function averagePair(arr, val) {
+function averagePair(arr, target) {
   let left = 0
   let right = arr.length - 1
 
   while (left < right) {
     let average = (arr[left] + arr[right]) / 2
 
-    if (average === val) return true
-    else if (average < val) left++
+    if (average === target) return true
+    else if (average < target) left++
     else right--
   }
 
