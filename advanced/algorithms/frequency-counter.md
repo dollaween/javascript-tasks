@@ -12,11 +12,11 @@
 
 ---
 
-**Цель задач:** Практика применения алгоритма Frequency counter.
+**Цель задач:** Практика применения паттерна Frequency counter.
 
 ---
 
-##### 1. Решите задачу с помощью алгоритма Frequency counter
+##### 1. Решите задачу с помощью паттерна Frequency counter
 Напишите функцию, которая принимает два массива чисел и возвращает true, если второй массив содержит те же числа, но в квадрате (порядок чисел значения не имеет).
 
 ```javascript
@@ -57,7 +57,7 @@ function same(arr1, arr2) {
 <p>
 
 * **Сложность:** O(N^2)
-* **Алгоритм:** Frequency counter
+* **Паттерн:** Frequency counter
 
 ```javascript
 function same (arr1, arr2) {
@@ -87,7 +87,7 @@ function same (arr1, arr2) {
 
 ---
 
-##### 2. Решите задачу с помощью алгоритма Frequency counter
+##### 2. Решите задачу с помощью паттерна Frequency counter
 Напишите функцию, которая принимает массив элементов и массив исключений. Функция должна вернуть отфильтрованный массив, в котором не содержится ни одно из исключений.
 
 ```javascript
@@ -117,7 +117,7 @@ function filter(arr, exceptions) {
 <p>
 
 * **Сложность:** O(N)
-* **Алгоритм:** Frequency counter
+* **Паттерн:** Frequency counter
 
 ```javascript
 function filter(arr, exceptions) {
@@ -136,7 +136,7 @@ function filter(arr, exceptions) {
 
 ---
 
-##### 3. Решите задачу с помощью алгоритма Frequency counter
+##### 3. Решите задачу с помощью паттерна Frequency counter
 Напишите функцию, которая принимает два числа и возвращает `true`, если числа имеют одинаковую частоту цифр.
 
 ```javascript
@@ -152,7 +152,7 @@ sameFrequency(11, 111)        // false
 <p>
 
 * **Сложность:** O(N)
-* **Алгоритм**: Frequency counter
+* **Паттерн**: Frequency counter
 
 ```javascript
 function same(num1, num2) {
@@ -183,7 +183,7 @@ function same(num1, num2) {
 
 ---
 
-##### 4. Решите задачу с помощью алгоритма Frequency counter
+##### 4. Решите задачу с помощью паттерна Frequency counter
 Напишите функцию, которая принимает массив фильмов `movies` и длительность `flightLength` . Функция должна вернуть `true`, если массив содержит два фильма, суммарная длительность которых равна заданной длительности `flightLength`.
 
 ```javascript
@@ -230,7 +230,7 @@ function findTwoMovies(movies, flightLength) {
 <p>
 
 * **Сложность**: O(N)
-* **Алгоритм**: Frequency counter
+* **Паттерн**: Frequency counter
 
 Преимущества по сравнению с решением через вложенный цикл:
 * 100 фильмов — 100 итераций
@@ -259,7 +259,7 @@ function findTwoMovies(movies, flightLength) {
 
 ---
 
-##### 5. Решите задачу с помощью алгоритма Frequency counter
+##### 5. Решите задачу с помощью паттерна Frequency counter
 Напишите функцию, которая принимает неограниченное количество аргументов и возвращает `false`, если среди аргументов нет повторяющихся.
 
 ```javascript
@@ -275,7 +275,7 @@ areThereDuplicates('a', 'never', 'a')   // true
 <p>
 
 * **Сложность**: O(N)
-* **Алгоритм**: Frequency counter
+* **Паттерн**: Frequency counter
 
 ```javascript
 function areThereDuplicates(...args) {
@@ -288,6 +288,44 @@ function areThereDuplicates(...args) {
 
   return false
 }
+```
+
+</p>
+</details>
+
+---
+
+##### 6. Решите задачу с помощью паттерна Frequency counter
+Напишите функцию, которая принимает массив чисел `nums` и число `target`. Функция должна найти и вернуть индексы двух чисел, сумма которых равна числу `target`.
+
+```javascript
+twoSum([2, 7, 11, 15], 9)       // [0, 1]
+twoSum([8, 14, 3, 17, 5], 20)   // [2, 3]
+twoSum([1, 2, 3], 10)           // null
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+
+function twoSum(nums, target) {
+  const freqCounter = {}
+
+  for (let i = 0; i < nums.length; i++) {
+    const cur = freqCounter[nums[i]]
+
+    if (cur >= 0) {
+      return [cur, i]
+    } else {
+      const numToFind = target - nums[i]
+      freqCounter[numToFind] = i
+    }
+  }
+
+  return null
+}
+
 ```
 
 </p>
