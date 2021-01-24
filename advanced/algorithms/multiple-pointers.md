@@ -248,3 +248,49 @@ function isSubsequence(str1, str2) {
 
 </p>
 </details>
+
+---
+
+##### 6. Решите задачу используя паттерн Multiple Pointers
+Напишите функцию, которая принимает два отсортированных массива чисел. Функция должна объединить два массива и вернуть отсортированный массив чисел.
+
+```javascript
+function mergeSortedArrays(nums1, nums2) {};
+
+console.log(mergeSortedArrays([1, 5, 7], [0, 2]))
+// [ 0, 1, 2, 5, 7 ]
+console.log(mergeSortedArrays([-6], [4, 4]))
+// [ -6, 4, 4 ]
+console.log(mergeSortedArrays([], []))
+// []
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+* **Сложность:** O(N + M)
+
+```javascript
+function mergeSortedArrays(nums1, nums2) {
+  const l1 = nums1.length
+  const l2 = nums2.length
+  const nums = []
+  let i = 0
+  let k = 0
+
+  while (i < l1 || k < l2) {
+    if ((i < l1 && nums1[i] <= nums2[k]) || k >= l2) {
+      nums.push(nums1[i])
+      i++
+    } else {
+      nums.push(nums2[k])
+      k++
+    }
+  }
+
+  return nums
+};
+```
+
+</p>
+</details>
