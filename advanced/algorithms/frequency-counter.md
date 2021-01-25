@@ -56,7 +56,7 @@ function same(arr1, arr2) {
 <details><summary><b>Решение</b></summary>
 <p>
 
-* **Сложность:** O(N^2)
+* **Сложность:** O(N)
 * **Паттерн:** Frequency counter
 
 ```javascript
