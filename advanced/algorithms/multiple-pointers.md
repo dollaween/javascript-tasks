@@ -265,7 +265,7 @@ console.log(mergeSortedArrays([], []))
 // []
 ```
 
-<details><summary><b>Решение</b></summary>
+<details><summary><b>Решение 1</b></summary>
 <p>
 
 * **Сложность:** O(N + M)
@@ -289,6 +289,46 @@ function mergeSortedArrays(nums1, nums2) {
   }
 
   return nums
+};
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+* **Сложность:** O(N + M)
+
+То же самое решение, но без лишних проверок в `if`, где остатки просто записываются при помощи при двух дополнительных циклов.
+
+```javascript
+function mergeSortedArrays(nums1, nums2) {
+  const result = []
+  let i = 0
+  let k = 0
+
+  while (i < nums1.length && k < nums2.length) {
+    if (nums1[i] < nums2[k]) {
+      result.push(nums1[i])
+      i++
+    } else {
+      result.push(nums2[k])
+      k++
+    }
+  }
+
+  while (i < nums1.length) {
+    result.push(nums1[i])
+    i++
+  }
+
+  while (k < nums2.length) {
+    result.push(nums2[k])
+    k++
+  }
+
+  return result
 };
 ```
 
