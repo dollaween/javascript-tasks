@@ -30,7 +30,7 @@ same([1, 2, 1], [4, 4, 1])    // false, должна быть та же част
 <details><summary><b>Неоптимальное решение</b></summary>
 <p>
 
-**Сложность:** O(N^2)
+* **Сложность:** O(N^2)
 
 ```javascript
 function same(arr1, arr2) {
