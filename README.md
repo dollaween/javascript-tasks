@@ -36,6 +36,7 @@
   * [Сортировка слиянием / Merge Sort](./advanced/sorting/merge.md)
 * Структуры данных
   * [Односвязный список / Singly Linked List](./advanced/data-structures/singly-linked-list.md)
+  * [Матрицы / Matrices](./advanced/data-structures/matrices.md)
 * [Нотация О больше](./advanced/big-o.md)
 * [Функции](./advanced/functions.md)
 
