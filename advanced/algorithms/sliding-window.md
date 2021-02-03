@@ -1,6 +1,6 @@
 <div align="center">
 
-# Задачи по алгоритму Sliding Window
+# Задачи по паттерну Sliding Window
 
 [Вопросы](https://github.com/dollaween/javascript-questions)
 |
@@ -12,11 +12,11 @@
 
 ---
 
-**Цель задач:** Практика применения алгоритма Sliding Window.
+**Цель задач:** Практика применения паттерна Sliding Window.
 
 ---
 
-##### 1. Решите задачу с помощью алгоритма Sliding Window
+##### 1. Решите задачу с помощью паттерна Sliding Window
 Напишите функцию, которая принимает массив чисел `nums` и число `n`. Функция должна вычислить максимальную сумму `n`-подряд идущих элементов в массиве.
 
 ```javascript
@@ -84,4 +84,51 @@ function maxSubarraySum(nums, n) {
 
 </p>
 </details>
+
+---
+
+##### 2. Решите задачу с помощью паттерна Sliding Window
+Напишите функцию, которая принимает строку `s` и возвращает длину самой длинной подстроки без повторяющихся символов.
+
+```javascript
+function lengthOfLongestSubstring(s) {}
+
+lengthOfLongestSubstring('abracadabra')
+// 4, самая длинная подстрока без повторяющихся символов — 'brac'
+
+lengthOfLongestSubstring('aaaa')
+// 1, самая длинная подстрока без повторяющихся символов — 'a'
+
+lengthOfLongestSubstring('abbcdb')
+// 3, самая длинная подстрока без повторяющихся символов — 'bcd'
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function lengthOfLongestSubstring(s) {
+  const set = new Set()
+  let a = 0
+  let b = 0
+  let max = 0
+
+  while(b < s.length) {
+    if(!set.has(s.charAt(b))) {
+      set.add(s.charAt(b))
+      b++
+      max = Math.max(set.size, max)
+    } else {
+      set.delete(s.charAt(a))
+      a++
+    }
+  }
+
+  return max
+};
+```
+
+</p>
+</details>
+
 
