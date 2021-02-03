@@ -109,8 +109,8 @@ lengthOfLongestSubstring('abbcdb')
 ```javascript
 function lengthOfLongestSubstring(str) {
   const set = new Set()
-  let a = 0
-  let b = 0
+  let a = 0   // start
+  let b = 0   // end
   let max = 0
 
   while(b < str.length) {
@@ -138,8 +138,8 @@ function lengthOfLongestSubstring(str) {
 function lengthOfLongestSubstring(str) {
   let seen = {}
   let max = 0
-  let a = 0
-  let b = 0
+  let a = 0   // start
+  let b = 0   // end
 
   for (; b < str.length; b++) {
     let char = str[b]
