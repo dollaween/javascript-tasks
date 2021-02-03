@@ -88,10 +88,10 @@ function maxSubarraySum(nums, n) {
 ---
 
 ##### 2. Решите задачу с помощью паттерна Sliding Window
-Напишите функцию, которая принимает строку `s` и возвращает длину самой длинной подстроки без повторяющихся символов.
+Напишите функцию, которая принимает строку `str` и возвращает длину самой длинной подстроки без повторяющихся символов.
 
 ```javascript
-function lengthOfLongestSubstring(s) {}
+function lengthOfLongestSubstring(str) {}
 
 lengthOfLongestSubstring('abracadabra')
 // 4, самая длинная подстрока без повторяющихся символов — 'brac'
@@ -107,19 +107,19 @@ lengthOfLongestSubstring('abbcdb')
 <p>
 
 ```javascript
-function lengthOfLongestSubstring(s) {
+function lengthOfLongestSubstring(str) {
   const set = new Set()
   let a = 0
   let b = 0
   let max = 0
 
-  while(b < s.length) {
-    if(!set.has(s.charAt(b))) {
-      set.add(s.charAt(b))
+  while(b < str.length) {
+    if(!set.has(str.charAt(b))) {
+      set.add(str.charAt(b))
       b++
       max = Math.max(set.size, max)
     } else {
-      set.delete(s.charAt(a))
+      set.delete(str.charAt(a))
       a++
     }
   }
