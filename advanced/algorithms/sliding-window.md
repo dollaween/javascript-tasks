@@ -103,7 +103,7 @@ lengthOfLongestSubstring('abbcdb')
 // 3, самая длинная подстрока без повторяющихся символов — 'bcd'
 ```
 
-<details><summary><b>Решение</b></summary>
+<details><summary><b>Решение 1</b></summary>
 <p>
 
 ```javascript
@@ -131,4 +131,28 @@ function lengthOfLongestSubstring(str) {
 </p>
 </details>
 
+<details><summary><b>Решение 2</b></summary>
+<p>
 
+```javascript
+function lengthOfLongestSubstring(str) {
+  let seen = {}
+  let max = 0
+  let a = 0
+  let b = 0
+
+  for (; b < str.length; b++) {
+    let char = str[b]
+    if (seen[char]) {
+      a = Math.max(a, seen[char])
+    }
+    max = Math.max(max, b - a + 1)
+    seen[char] = b + 1
+  }
+
+  return max
+};
+```
+
+</p>
+</details>
