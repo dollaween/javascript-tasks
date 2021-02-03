@@ -88,6 +88,54 @@ function maxSubarraySum(nums, n) {
 ---
 
 ##### 2. Решите задачу с помощью паттерна Sliding Window
+Напишите функцию, которая принимает массив положительных чисел `arr` и число `num`. Функция должна вернуть минимальную длину непрерывного подмассива сумма которого больше или равна числу `num`.
+
+```javascript
+function minSubArrayLen(arr, num)
+
+minSubArrayLen([2, 3, 1, 2, 4, 3], 7)
+// 2, потому что [4, 3] — минимальный непрерывный подмассив, сумма чисел которого больше или равно 7
+
+minSubArrayLen([2, 1, 6, 5, 4], 9)
+// 2, потому что [5, 4] — минимальный непрерывный подмассив
+
+minSubArrayLen([3, 1, 62, 19], 52)
+// 1, потому что [62] — минимальный непрервный подмассив, который больше чем 52
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```javascript
+function minSubArrayLen(arr, num) {
+  let a = 0   // start
+  let b = 0   // end
+  let sum = 0
+  let min = Infinity
+
+  while (a < arr.length) {
+    if (sum < num && b < arr.length) {
+      sum += arr[b]
+      b++
+    } else if (sum >= num) {
+      min = Math.min(min, b - a)
+      sum -= arr[a]
+      a++
+    } else {
+      break
+    }
+  }
+
+  return min === Infinity ? 0 : min
+}
+```
+
+</p>
+</details>
+
+---
+
+##### 3. Решите задачу с помощью паттерна Sliding Window
 Напишите функцию, которая принимает строку `str` и возвращает длину самой длинной подстроки без повторяющихся символов.
 
 ```javascript
