@@ -105,7 +105,48 @@ git push --force
 
 ---
 
-##### 5. Как влить в master только определенную ветку?
+
+##### 5. Как слить вместе две ветки?
+
+```bash
+# Из такой истории:
+[master] C1 <- C2 <- C3 <- C4
+[feat1]     <- C5 <- C6
+
+# Должно получится так:
+[master] C1 <- C2 <- C3 <- C4 <- C5 <- C6
+```
+
+<details><summary><b>Решение 1</b></summary>
+<p>
+
+```bash
+git checkout master
+git merge feat1
+# [решаем конфликты]
+```
+
+</p>
+</details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```bash
+git rebase master feat1
+# [решаем конфликты]
+# после успешного слияния переходим на master
+git checkout master
+# и методом перемотки передвигаем указатель на последний коммит
+git merge feat1
+```
+
+</p>
+</details>
+
+---
+
+##### 6. Как влить в master только определенную ветку?
 Допустим, у нас есть такая структура:
 
 ```bash
@@ -119,7 +160,7 @@ git push --force
 <p>
 
 ```bash
-git rebase --onti master feat2
+git rebase --onto master feat2
 # после переключаемся на master
 git checkout master
 # и делаем перемотку указателя
@@ -131,12 +172,14 @@ git merge feat2
 
 ---
 
-##### 3. 
+##### 7. Как удалить ветку?
 
 <details><summary><b>Решение</b></summary>
 <p>
 
 ```bash
+git branch -d <branch>
+git branch -d feat1
 ```
 
 </p>
@@ -144,12 +187,14 @@ git merge feat2
 
 ---
 
-##### 3. 
+##### 8. Как удалить ветку на сервере?
 
 <details><summary><b>Решение</b></summary>
 <p>
 
 ```bash
+git push <remote> --delete <branch>
+git push origin --delete feat1
 ```
 
 </p>
