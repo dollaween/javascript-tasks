@@ -105,12 +105,25 @@ git push --force
 
 ---
 
-##### 3. 
+##### 5. Как влить в master только определенную ветку?
+Допустим, у нас есть такая структура:
+
+```bash
+[master] C1 <- C2
+[feat1]     <- C3 <- C4 <- C5
+[feat2]           <- C6 <- C7
+```
+Как влить в `C2 (master)` только ветку с коммитами `C6` и `C7` `(feat2)`, игнорируя при этом `C3`?
 
 <details><summary><b>Решение</b></summary>
 <p>
 
 ```bash
+git rebase --onti master feat2
+# после переключаемся на master
+git checkout master
+# и делаем перемотку указателя
+git merge feat2
 ```
 
 </p>
