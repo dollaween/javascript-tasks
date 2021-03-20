@@ -77,18 +77,32 @@ A <- B <- C <- D <- E
 A <- E
 ```
 
-<details><summary><b>Решение</b></summary>
+<details><summary><b>Решение 1</b></summary>
 <p>
 
 ```bash
 git reset --soft HEAD~n
 # [принять изменения, сделать коммит]
-# при отправке изменений на сервер, понадобится использовать флаг --force:
+# при отправке изменений на сервер понадобится использовать флаг --force:
 git push --force
 ```
 
 </p>
 </details>
+
+<details><summary><b>Решение 2</b></summary>
+<p>
+
+```bash
+git reset $(git merge-base branchFrom currentBranch)
+# [принять изменения, сделать коммит]
+# при отправке изменений на сервер понадобится использовать флаг --force:
+git push --force
+```
+
+</p>
+</details>
+
 ---
 
 ##### 3. 
