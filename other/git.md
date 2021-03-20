@@ -26,7 +26,97 @@ git commit -m 'Commit with mistake'   # допустим, мы сделали т
 git reset HEAD~
 # [отредактировать файлы, по необходимости]
 git add .
-git commit -c ORIG_HEAD               # такой записью используем предыдущее сообщение коммита
+git commit -c ORIG_HEAD               # используем предыдущее сообщение коммита
+```
+
+</p>
+</details>
+
+---
+
+##### 2. Как исправить сообщение последнего коммита?
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```bash
+git commit --amend
+```
+
+</p>
+</details>
+
+---
+
+##### 3. Как внести правки в последний коммит?
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```bash
+# [сделать правки]
+git commit --amend
+
+# если сообщение коммита менять не нужно, то:
+git commit --amend --no-edit
+```
+
+</p>
+</details>
+
+---
+
+##### 4. Как исправить историю коммитов?
+
+```bash
+# Из такой истории:
+A <- B <- C <- D <- E
+# Сделать такую:
+A <- E
+```
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```bash
+```
+
+</p>
+</details>
+---
+
+##### 3. 
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```bash
+```
+
+</p>
+</details>
+
+---
+
+##### 3. 
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```bash
+```
+
+</p>
+</details>
+
+---
+
+##### 3. 
+
+<details><summary><b>Решение</b></summary>
+<p>
+
+```bash
 ```
 
 </p>
