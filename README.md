@@ -54,3 +54,4 @@
 * [Браузер](./browser.md)
 * [Паттерны проектирования](./patterns.md)
 * [Typescript](./typescript.md)
+* [Задачи со звездочкой](./star.md)
