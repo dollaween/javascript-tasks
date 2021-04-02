@@ -68,7 +68,7 @@ console.log(/* code... */)
 <p>
 
 ```javascript
-str.includes(str, char)
+str.includes(char)
 ```
 
 </p>
